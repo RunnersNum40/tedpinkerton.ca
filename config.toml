@@ -1,4 +1,4 @@
-baseURL = 'http://tedpinkerton.ca/'
+baseURL = 'https://tedpinkerton.ca/'
 languageCode = 'en-us'
 title = 'Test Hugo Site'
 theme = "gokarna"
