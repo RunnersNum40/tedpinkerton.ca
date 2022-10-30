@@ -11,12 +11,6 @@ enableRobotsTXT = true
     identifier = "posts"
 
     url = "/posts/"
-    
-    # Text before the name
-    pre = ""
-
-    # Text after the name
-    post = ""
 
     # Display name
     name = "Posts"
@@ -25,28 +19,29 @@ enableRobotsTXT = true
     weight = 1
 
   [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
+    identifier = "portfolio"
+    name = "Portfolio"
+    url = "/pages/"
     weight = 2
     
   [[menu.main]]
     identifier = "github"
-    url = "https://github.com"
+    url = "https://github.com/RunnersNum40/tedpinkerton.ca"
     weight = 3
     
-    # We use feather-icons: https://feathericons.com/
     pre = "<span data-feather='github'></span>"
+    
+  [[menu.main]]
+    identifier = "linkedin"
+    url = "https://www.linkedin.com/in/ted-pinkerton/"
+    weight = 4
+    
+    pre = "<span data-feather='linkedin'></span>"
+
 
 [params]
-  # URL for the avatar on homepage
-  avatarURL = ""
-
-  # Choose one of size-xs, size-s, size-m, size-l & size-xl. (Default: size-m)
-  avatarSize = ""
-
   # Description to display on homepage
-  description = "Sky above, sand below & peace within"
+  description = "Projects, Skills, and Portfolio"
 
   # Accent color is displayed when you hover over <a> tags
   accentColor = "#FF4D4D"
@@ -56,15 +51,9 @@ enableRobotsTXT = true
   # customHeadHTML = ""
 
   # Keywords relevant for SEO
-  metaKeywords = ["blog", "gokarna", "hugo"]
+  metaKeywords = ["blog", "gokarna", "hugo", "ted pinkerton", "portfolio"]
 
-  # If you want to display posts on the homepage, the options are
-  # "popular" (order posts by weight), "recent" (order posts by date)
-  # or "" (do not display, default option)
-  showPostsOnHomePage = ""
-
-  # Footer text
-  footer = "The Marauders"
+  pygmentsStyle = "dracula"
 
 [context.production.environment]
   HUGO_VERSION = "0.105.0"
