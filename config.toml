@@ -1,8 +1,70 @@
 baseURL = 'https://tedpinkerton.ca/'
 languageCode = 'en-us'
-title = 'Test Hugo Site'
+title = 'Ted Pinkerton'
 theme = "gokarna"
 
+# Automatically generate robots.txt
+enableRobotsTXT = true
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+
+    url = "/posts/"
+    
+    # Text before the name
+    pre = ""
+
+    # Text after the name
+    post = ""
+
+    # Display name
+    name = "Posts"
+
+    # Weights are used to determine the ordering
+    weight = 1
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+    
+  [[menu.main]]
+    identifier = "github"
+    url = "https://github.com"
+    weight = 3
+    
+    # We use feather-icons: https://feathericons.com/
+    pre = "<span data-feather='github'></span>"
+
+[params]
+  # URL for the avatar on homepage
+  avatarURL = ""
+
+  # Choose one of size-xs, size-s, size-m, size-l & size-xl. (Default: size-m)
+  avatarSize = ""
+
+  # Description to display on homepage
+  description = "Sky above, sand below & peace within"
+
+  # Accent color is displayed when you hover over <a> tags
+  accentColor = "#FF4D4D"
+
+  # You can use this to inject any HTML in the <head> tag.
+  # Ideal usecase for this is to import custom js/css or add your analytics snippet
+  # customHeadHTML = ""
+
+  # Keywords relevant for SEO
+  metaKeywords = ["blog", "gokarna", "hugo"]
+
+  # If you want to display posts on the homepage, the options are
+  # "popular" (order posts by weight), "recent" (order posts by date)
+  # or "" (do not display, default option)
+  showPostsOnHomePage = ""
+
+  # Footer text
+  footer = "The Marauders"
 
 [context.production.environment]
   HUGO_VERSION = "0.105.0"
