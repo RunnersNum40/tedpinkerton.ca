@@ -41,6 +41,12 @@ params:
         - name: linkedin
           url: "https://www.linkedin.com/in/ted-pinkerton/"
 
+    assets:
+        favicon: favicon/favicon.ico
+        favicon16x16: favicon/favicon16x16.png
+        favicon32x32: favicon/favicon32x32.png
+        apple_touch_icon: favicon/apple_touch_icon.png
+
 markup:
     goldmark:
         renderer:
