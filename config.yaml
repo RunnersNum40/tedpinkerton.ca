@@ -10,14 +10,23 @@ buildExpired: false
 enableEmoji: true
 pygmentsUseClasses: true
 
+menu:
+    main:
+        - name: Skills
+          url: skills
+          weight: 1
+        - name: Projects
+          url: projects
+          weight: 2
 
 params:
+    author: Ted Pinkerton
     # Enable SEO
     env: production
     description: Ted Pinkerton's portfolio and project showcase
     # Automatically choose the system theme
     defaultTheme: auto
-    disableThemeToggle: true
+    # disableThemeToggle: true
     
     ShowCodeCopyButtons: true
 
@@ -25,14 +34,6 @@ params:
         enabled: true
         title: Who am I?
         subtitle: "I am an [Engineering Science](https://engsci.utoronto.ca/) student at the [University of Toronto](https://www.engineering.utoronto.ca/). I am in my third year and studying machine intelligence engineering. I'm interested in software development, robotics, control systems, and artificial intelligence."
-
-        imageWidth: 120 # custom size
-        imageHeight: 120 # custom size
-        buttons:
-            # - name: Github
-            #   url: https://github.com/RunnersNum40/tedpinkerton.ca
-            # - name: Linkedin
-            #   url: https://www.linkedin.com/in/ted-pinkerton/
 
     socialIcons:
         - name: github
