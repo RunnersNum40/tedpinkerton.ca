@@ -1,0 +1,77 @@
+baseURL: 'https://tedpinkerton.ca/'
+title: Ted Pinkerton
+theme: PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+
+
+params:
+    # Enable SEO
+    env: production
+    description: Ted Pinkerton's portfolio and project showcase
+    # Automatically choose the system theme
+    defaultTheme: auto
+    disableThemeToggle: true
+    
+    ShowCodeCopyButtons: true
+
+    profileMode:
+        enabled: true
+        title: Who am I?
+        subtitle: "I am an [Engineering Science](https://engsci.utoronto.ca/) student at the [University of Toronto](https://www.engineering.utoronto.ca/). I am in my third year and studying machine intelligence engineering. I'm interested in software development, robotics, control systems, and artificial intelligence."
+
+        imageWidth: 120 # custom size
+        imageHeight: 120 # custom size
+        buttons:
+            # - name: Github
+            #   url: https://github.com/RunnersNum40/tedpinkerton.ca
+            # - name: Linkedin
+            #   url: https://www.linkedin.com/in/ted-pinkerton/
+
+    socialIcons:
+        - name: github
+          url: "https://github.com/RunnersNum40/"
+        - name: linkedin
+          url: "https://www.linkedin.com/in/ted-pinkerton/"
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+
+    highlight:
+        style: dracula
+        linenos: true
+        guessSyntax: true
+        codeFences: true
+        anchorLineNos: true
+
+privacy:
+    vimeo:
+        disabled: false
+        simple: true
+
+    twitter:
+        disabled: false
+        enableDNT: true
+        simple: true
+
+    instagram:
+        disabled: false
+        simple: true
+
+    youtube:
+        disabled: false
+        privacyEnhanced: true
+
+# Netlify config info
+context:
+    production:
+        environment:
+            HUGO_VERSION: 0.105.0

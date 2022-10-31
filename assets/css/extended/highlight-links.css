@@ -1,0 +1,4 @@
+/* Add a hover color to links since PaperMod doesn't have one */
+a:hover {
+    color:  #FF4D4D;
+}
