@@ -21,23 +21,17 @@ menu:
 
 params:
     author: Ted Pinkerton
-    # Enable SEO
     env: production
     description: Ted Pinkerton's portfolio and project showcase
-    # Automatically choose the system theme
+    keywords: [personal, website, python, development, developer, ted pinkerton, machine intelligence, ai, portfolio, projects, engineering science, engineer]
     defaultTheme: auto
     # disableThemeToggle: true
-    
     ShowCodeCopyButtons: true
 
     profileMode:
         enabled: true
         title: Who am I?
-        subtitle: "I am an [Engineering Science](https://engsci.utoronto.ca/) student at the [University of Toronto](https://www.engineering.utoronto.ca/). I am in my third year and studying machine intelligence engineering. I'm interested in software development, robotics, control systems, and artificial intelligence."
-
-    homeInfoParams:
-        Title: Who am I?
-        Content:
+        subtitle:
             I am an [Engineering Science](https://engsci.utoronto.ca/) student at the [University of Toronto](https://www.engineering.utoronto.ca/).
             I am in my third year and studying machine intelligence engineering.
             I'm interested in software development, robotics, control systems, and artificial intelligence.
