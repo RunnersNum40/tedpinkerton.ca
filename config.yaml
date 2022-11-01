@@ -35,17 +35,26 @@ params:
         title: Who am I?
         subtitle: "I am an [Engineering Science](https://engsci.utoronto.ca/) student at the [University of Toronto](https://www.engineering.utoronto.ca/). I am in my third year and studying machine intelligence engineering. I'm interested in software development, robotics, control systems, and artificial intelligence."
 
+    homeInfoParams:
+        Title: Who am I?
+        Content:
+            I am an [Engineering Science](https://engsci.utoronto.ca/) student at the [University of Toronto](https://www.engineering.utoronto.ca/).
+            I am in my third year and studying machine intelligence engineering.
+            I'm interested in software development, robotics, control systems, and artificial intelligence.
+            <br/>
+            I am facinated by the interplay between hardware and software systems especially in the context of robotics.
+
     socialIcons:
         - name: github
           url: "https://github.com/RunnersNum40/"
         - name: linkedin
           url: "https://www.linkedin.com/in/ted-pinkerton/"
-
-    assets:
-        favicon: favicon/favicon.ico
-        favicon16x16: favicon/favicon16x16.png
-        favicon32x32: favicon/favicon32x32.png
-        apple_touch_icon: favicon/apple_touch_icon.png
+        - name: stackoverflow
+          url: "https://stackoverflow.com/users/7675722/runnersnum45"
+        - name: cv
+          url: Theodore_Pinkerton_Resume_2023.pdf
+        - name: email
+          url: mailto:ted.pinkerton@mail.utoronto.ca
 
 markup:
     goldmark:
