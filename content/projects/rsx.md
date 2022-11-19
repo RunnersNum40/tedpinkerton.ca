@@ -4,4 +4,4 @@ summary: I am the mechanical lead in an undergraduate level competitive design t
 description: I am the mechanical lead for the Robotics for Space Exploration competitive design team
 tags: ["Mechanical", "Leadership"]
 ---
-# [Robotics for SPace Exploration](rsx.skule.ca)
+# [Robotics for Space Exploration](https://rsx.skule.ca)
