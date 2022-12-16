@@ -15,7 +15,7 @@ I am using the [PaperMod](https://github.com/adityatelange/hugo-PaperMod/) theme
 
 ## Netlify
 [Netlify](https://www.netlify.com/) is a platform that hosts sites. It supports building websites with Hugo through Git repositories. All my code and content is hosted in a [GitHub repository](https://github.com/RunnersNum40/tedpinkerton.ca) and if any changes are pushed Netlify automatically rebuilds and hosts the new content.
-![demo](/images/Netlify_Screenshot.png)
+![netlify](/images/Netlify_Screenshot.png)
 
 ## Future Plans
 I'd like to add more reactive content and build my own custom theme.
