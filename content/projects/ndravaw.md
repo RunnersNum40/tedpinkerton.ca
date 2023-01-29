@@ -1,7 +1,7 @@
 ---
 title: "National Day of Remembrance and Action on Violence Against Women 2021"
-summary: I am the mechanical lead in an undergraduate level competitive design team
-description: I am the mechanical lead for the Robotics for Space Exploration competitive design team
+summary: National Day of Remembrance and Action on Violence Against Women blue and gold committee build
+description: National Day of Remembrance and Action on Violence Against Women blue and gold committee build
 tags: ["LEDs", "Activism", "Raspberry Pi"]
 ---
 # The event
