@@ -1,8 +1,8 @@
 public/
 
 # VSCode
-.vscode/*
+.vscode
 .npmignore
 
 # Dev Container
-.devcontainer/*
+.devcontainer
