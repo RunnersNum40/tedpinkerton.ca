@@ -1,5 +1,5 @@
 ---
-title: "National Day of Remembrance and Action on Violence Against Women 2021"
+title: "National Day of Remembrance and Action on Violence Against Women 2022"
 summary: National Day of Remembrance and Action on Violence Against Women blue and gold committee build
 description: National Day of Remembrance and Action on Violence Against Women blue and gold committee build
 tags: ["LEDs", "Activism", "Raspberry Pi"]
