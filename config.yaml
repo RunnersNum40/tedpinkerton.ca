@@ -1,6 +1,6 @@
-baseURL: 'https://tedpinkerton.ca/'
-title: Ted Pinkerton
-theme: PaperMod
+baseURL: "https://tedpinkerton.ca/"
+title: ted
+theme: "hugo-theme-console"
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
@@ -11,88 +11,103 @@ enableEmoji: true
 pygmentsUseClasses: true
 
 menu:
-    main:
-        - name: About Me
-          url: about
-          weight: 1
-        - name: Skills
-          url: skills
-          weight: 2
-        - name: Projects
-          url: projects
-          weight: 3
-        # - name: Tags
-        #   url: tags
-        #   weight: 3
+  main:
+    - name: About Me
+      url: about
+      weight: 1
+    - name: Skills
+      url: skills
+      weight: 2
+    - name: Projects
+      url: projects
+      weight: 3
+    # - name: Tags
+    #   url: tags
+    #   weight: 3
 
 taxonomies:
-    category: categories
-    tag: tags
-    series: series
+  category: categories
+  tag: tags
+  series: series
 
 params:
-    author: Ted Pinkerton
-    env: production
-    description: Ted Pinkerton's portfolio and project showcase for robotics, software development, mechanical design, and engineering
-    keywords: [personal, website, python, development, developer, ted pinkerton, machine intelligence, ai, portfolio, projects, engineering science, engineer, robotics]
-    defaultTheme: auto
-    # disableThemeToggle: true
-    ShowCodeCopyButtons: true
+  author: Ted Pinkerton
+  env: production
+  description: Ted Pinkerton's portfolio and project showcase for robotics, software development, mechanical design, and engineering
+  keywords:
+    [
+      personal,
+      website,
+      python,
+      development,
+      developer,
+      ted pinkerton,
+      machine intelligence,
+      ai,
+      portfolio,
+      projects,
+      engineering science,
+      engineer,
+      robotics,
+    ]
+  defaultTheme: auto
+  # disableThemeToggle: true
+  ShowCodeCopyButtons: true
 
-    profileMode:
-        enabled: true
-        title: Who am I?
-        subtitle: >
-            I am an [Engineering Science](https://engsci.utoronto.ca/) student at the [University of Toronto](https://www.engineering.utoronto.ca/).
-            I am in my third year and studying machine intelligence engineering.
-            I'm interested in software development, robotics, control systems, and artificial intelligence.
-            <br/> 
-            I am facinated by the interplay between hardware and software systems especially in the context of robotics.
+  profileMode:
+    enabled: true
+    title: Who am I?
+    subtitle: >
+      I am an [Engineering Science](https://engsci.utoronto.ca/) student at the [University of Toronto](https://www.engineering.utoronto.ca/).
+      I am in my third year and studying machine intelligence engineering.
+      I'm interested in software development, robotics, control systems, and artificial intelligence.
+      <br/> 
+      I am facinated by the interplay between hardware and software systems especially in the context of robotics.
 
-    socialIcons:
-        - name: github
-          url: "https://github.com/RunnersNum40/"
-        - name: linkedin
-          url: "https://www.linkedin.com/in/ted-pinkerton/"
-        - name: stackoverflow
-          url: "https://stackoverflow.com/users/7675722/runnersnum45"
-        - name: cv
-          url: Theodore_Pinkerton_Resume_2023.pdf
-        - name: email
-          url: mailto:ted.pinkerton@mail.utoronto.ca
+  socialIcons:
+    - name: github
+      url: "https://github.com/RunnersNum40/"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/ted-pinkerton/"
+    - name: stackoverflow
+      url: "https://stackoverflow.com/users/7675722/runnersnum45"
+    - name: cv
+      url: Theodore_Pinkerton_Resume_2023.pdf
+    - name: email
+      url: mailto:ted.pinkerton@mail.utoronto.ca
 
 markup:
-    goldmark:
-        renderer:
-            unsafe: true
+  goldmark:
+    renderer:
+      unsafe: true
 
-    highlight:
-        style: dracula
-        linenos: true
-        guessSyntax: true
-        codeFences: true
-        anchorLineNos: true
+  highlight:
+    style: dracula
+    linenos: true
+    guessSyntax: true
+    codeFences: true
+    anchorLineNos: true
 
 privacy:
-    vimeo:
-        disabled: false
-        simple: true
+  vimeo:
+    disabled: false
+    simple: true
 
-    twitter:
-        disabled: false
-        enableDNT: true
-        simple: true
+  twitter:
+    disabled: false
+    enableDNT: true
+    simple: true
 
-    instagram:
-        disabled: false
-        simple: true
+  instagram:
+    disabled: false
+    simple: true
 
-    youtube:
-        disabled: false
-        privacyEnhanced: true
+  youtube:
+    disabled: false
+    privacyEnhanced: true
 
 # Netlify config info
 context:
-    production:
-        environment:
-            HUGO_VERSION: 0.105.0
+  production:
+    environment:
+      HUGO_VERSION: 0.105.0
