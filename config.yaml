@@ -1,6 +1,7 @@
 baseURL: "https://tedpinkerton.ca/"
 title: ted
 theme: "hugo-theme-console"
+languageCode: "en-us"
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
@@ -31,51 +32,64 @@ taxonomies:
   series: series
 
 params:
-  author: Ted Pinkerton
-  env: production
+  titleCutting: true
+  animateStyle: "animated zoomIn fast"
+  navlinks:
+    - name: about
+      url: about
+      weight: 1
+    - name: skills
+      url: skills
+      weight: 2
+    - name: projects
+      url: projects
+      weight: 3
+
+  # author: Ted Pinkerton
+  # env: production
   description: Ted Pinkerton's portfolio and project showcase for robotics, software development, mechanical design, and engineering
-  keywords:
-    [
-      personal,
-      website,
-      python,
-      development,
-      developer,
-      ted pinkerton,
-      machine intelligence,
-      ai,
-      portfolio,
-      projects,
-      engineering science,
-      engineer,
-      robotics,
-    ]
-  defaultTheme: auto
-  # disableThemeToggle: true
-  ShowCodeCopyButtons: true
-
-  profileMode:
-    enabled: true
-    title: Who am I?
-    subtitle: >
-      I am an [Engineering Science](https://engsci.utoronto.ca/) student at the [University of Toronto](https://www.engineering.utoronto.ca/).
-      I am in my third year and studying machine intelligence engineering.
-      I'm interested in software development, robotics, control systems, and artificial intelligence.
-      <br/> 
-      I am facinated by the interplay between hardware and software systems especially in the context of robotics.
-
-  socialIcons:
-    - name: github
-      url: "https://github.com/RunnersNum40/"
-    - name: linkedin
-      url: "https://www.linkedin.com/in/ted-pinkerton/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com/users/7675722/runnersnum45"
-    - name: cv
-      url: Theodore_Pinkerton_Resume_2023.pdf
-    - name: email
-      url: mailto:ted.pinkerton@mail.utoronto.ca
-
+  # keywords:
+  #   [
+  #     personal,
+  #     website,
+  #     python,
+  #     development,
+  #     developer,
+  #     ted pinkerton,
+  #     machine intelligence,
+  #     ai,
+  #     portfolio,
+  #     projects,
+  #     engineering science,
+  #     engineer,
+  #     robotics,
+  #   ]
+  # defaultTheme: auto
+  # # disableThemeToggle: true
+  # ShowCodeCopyButtons: true
+  #
+  # profileMode:
+  #   enabled: true
+  #   title: Who am I?
+  #   subtitle: >
+  #     I am an [Engineering Science](https://engsci.utoronto.ca/) student at the [University of Toronto](https://www.engineering.utoronto.ca/).
+  #     I am in my third year and studying machine intelligence engineering.
+  #     I'm interested in software development, robotics, control systems, and artificial intelligence.
+  #     <br/>
+  #     I am facinated by the interplay between hardware and software systems especially in the context of robotics.
+  #
+  # socialIcons:
+  #   - name: github
+  #     url: "https://github.com/RunnersNum40/"
+  #   - name: linkedin
+  #     url: "https://www.linkedin.com/in/ted-pinkerton/"
+  #   - name: stackoverflow
+  #     url: "https://stackoverflow.com/users/7675722/runnersnum45"
+  #   - name: cv
+  #     url: Theodore_Pinkerton_Resume_2023.pdf
+  #   - name: email
+  #     url: mailto:ted.pinkerton@mail.utoronto.ca
+  #
 markup:
   goldmark:
     renderer:
