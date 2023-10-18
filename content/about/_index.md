@@ -1,13 +1,12 @@
 ---
 title: "About Me"
 url: /about/
-summary: About me
+summary: About Ted Pinkerton
 description: >
-    I enjoy robotics, computer science, and math
+    Engineering Science student specializing in Machine Intelligence at U of T, with a focus on software engineering in robotics.
 ---
 ---
 
-I'm in my third year of Engineering Science at U of T and I am specializing in Machine Intelligence.
-I am looking forward to working in robotics to advance the boundaries of what we can achieve.
+Currently on a Professional Experience Year (PEY) at BioConnect as a front-end Intern, I am diving deeper into software development while applying my machine intelligence knowledge. My journey through robotics, both personally and as the Mechanical Lead of RSX at U of T, has fueled my passion for the elegant integration of hardware and software.
 
-You can look at my [skills page](/skills/) to learn about my experience and my [projects page](/projects/) to see what I've worked on in the past.
+Feel free to explore my [skills page](/skills/) to learn about my technical expertise, and my [projects page](/projects/) to see my hands-on experience in action.

@@ -1,22 +1,21 @@
 ---
 title: "tedpinkerton.ca"
-summary: This website is hosted on Netlify and built using Hugo's PaperMod theme
-description: This website is hosted on Netlify and built using Hugo's PaperMod theme
+summary: Hosted on Netlify with Hugo's PaperMod theme
+description: Discover the process behind building and hosting tedpinkerton.ca
 tags: ["Web Development"]
 ---
-# Motivation
-I built and maintain this website for several reasons. I wanted to experiment with creating my own custom website without using some companies propratary platform, I wanted somewhere public to document my work and experience, and several people I respect highly have done the same.
+# Purpose
+Creating a personal website allowed me to step away from proprietary platforms, have a dedicated space to document my work, and follow in the footsteps of individuals I admire.
 
-# How it's built
+# Build Process
 ## Static Site Generation
-This website is built using [Hugo](https://gohugo.io/), a static site generator. Hugo takes collections of documents and applies themes to them. Once the documents are themed it compiles them all into a single static page with only one style sheet. Because the site is build only once per version it can be delivered immediately and hosted easily.
+Utilizing [Hugo](https://gohugo.io/), a static site generator, I transformed collections of documents into a themed, static page, ensuring swift delivery and easy hosting.
 
-I am using the [PaperMod](https://github.com/adityatelange/hugo-PaperMod/) theme with some slight modifications.
+I've employed the [PaperMod](https://github.com/adityatelange/hugo-PaperMod/) theme with slight alterations to fit my preferences.
 
-## Netlify
-[Netlify](https://www.netlify.com/) is a platform that hosts sites. It supports building websites with Hugo through Git repositories. All my code and content is hosted in a [GitHub repository](https://github.com/RunnersNum40/tedpinkerton.ca) and if any changes are pushed Netlify automatically rebuilds and hosts the new content.
-![netlify](/images/Netlify_Screenshot.png)
+## Hosting on Netlify
+[Netlify](https://www.netlify.com/) hosts this site and facilitates automatic rebuilds and updates via a [GitHub repository](https://github.com/RunnersNum40/tedpinkerton.ca) whenever changes are pushed.
+![netlify](/images/website/Netlify_Screenshot.png)
 
-## Future Plans
-I'd like to add more reactive content and build my own custom theme.
-
+## Future Endeavors
+I aim to introduce more reactive content and design a unique theme to better represent my personal brand.
