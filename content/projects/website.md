@@ -15,7 +15,7 @@ I've employed the [PaperMod](https://github.com/adityatelange/hugo-PaperMod/) th
 
 ## Hosting on Netlify
 [Netlify](https://www.netlify.com/) hosts this site and facilitates automatic rebuilds and updates via a [GitHub repository](https://github.com/RunnersNum40/tedpinkerton.ca) whenever changes are pushed.
-![netlify](/images/Netlify_Screenshot.png)
+![netlify](/images/website/Netlify_Screenshot.png)
 
 ## Future Endeavors
 I aim to introduce more reactive content and design a unique theme to better represent my personal brand.
