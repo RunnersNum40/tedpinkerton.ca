@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "about Me"
 url: /about/
 summary: About me
 description: >
