@@ -15,12 +15,15 @@ menu:
     - name: about
       url: about
       weight: 1
+      pre: "cd ~/"
     - name: skills
       url: skills
       weight: 2
+      pre: "cd ~/"
     - name: projects
       url: projects
       weight: 3
+      pre: "cd ~/"
 
 taxonomies:
   category: categories
@@ -28,6 +31,9 @@ taxonomies:
   series: series
 
 params:
+  disableThemeToggle: true
+  label:
+    text: "~"
   env: production
   description: Ted Pinkerton's portfolio and project showcase for robotics, software development, mechanical design, and engineering
   keywords:
