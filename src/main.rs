@@ -1,14 +1,14 @@
 use dioxus::prelude::*;
 
-use views::{About, Art, Blog, Home, Navbar, Projects};
-
 mod components;
 mod views;
+
+use views::*;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
 enum Route {
-    #[layout(Navbar)]
+    #[layout(NavFooter)]
         #[route("/")]
         Home {},
         #[route("/blog/")]
@@ -34,6 +34,9 @@ fn App() -> Element {
         document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
 
-        Router::<Route> {}
+        div {
+            id: "app",
+            Router::<Route> {}
+        }
     }
 }

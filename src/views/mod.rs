@@ -10,8 +10,8 @@ pub use blog::Blog;
 mod home;
 pub use home::Home;
 
-mod navbar;
-pub use navbar::Navbar;
-
 mod projects;
 pub use projects::Projects;
+
+mod nav_footer;
+pub use nav_footer::NavFooter;
