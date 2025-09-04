@@ -1,4 +1,7 @@
-use crate::{Route, components::{Navbar, Footer}};
+use crate::{
+    components::{Footer, Navbar},
+    Route,
+};
 use dioxus::prelude::*;
 
 #[component]
@@ -6,8 +9,11 @@ pub fn NavFooter() -> Element {
     rsx! {
         div { id: "layout",
             Navbar {}
-            div { id: "main", Outlet::<Route> {} }
+            main { id: "main", role: "main",
+                Outlet::<Route> {}
+            }
             Footer {}
         }
     }
 }
+

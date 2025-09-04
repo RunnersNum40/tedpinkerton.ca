@@ -3,8 +3,9 @@ use dioxus::prelude::*;
 #[component]
 pub fn Art() -> Element {
     rsx! {
-        div {
-            id: "art",
+        section {
+            id: "art", class: "section",
         }
     }
 }
+
