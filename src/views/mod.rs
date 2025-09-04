@@ -13,5 +13,5 @@ pub use home::Home;
 mod projects;
 pub use projects::Projects;
 
-mod nav_footer;
-pub use nav_footer::NavFooter;
+mod header_footer;
+pub use header_footer::HeaderFooter;

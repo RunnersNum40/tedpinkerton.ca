@@ -9,6 +9,7 @@ pub fn Footer() -> Element {
             div { class: "footer-inner",
                 span { "© {year} Ted Pinkerton" }
                 nav {
+                    "aria-label": "Skule Webring Link",
                     a { href: "https://webring.skule.ca", "Skule webring" }
                 }
             }

@@ -4,8 +4,11 @@ use dioxus::prelude::*;
 pub fn Art() -> Element {
     rsx! {
         section {
-            id: "art", class: "section",
+            id: "art",
+            div { class: "container",
+                h1 { "Art" }
+                p { class: "muted", "A collection of my artwork." }
+            }
         }
     }
 }
-

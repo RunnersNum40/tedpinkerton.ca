@@ -11,7 +11,7 @@ use views::*;
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
 enum Route {
-    #[layout(NavFooter)]
+    #[layout(HeaderFooter)]
         #[route("/")]
         Home {},
         #[route("/blog/")]

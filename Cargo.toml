@@ -9,7 +9,6 @@ dioxus = { version = "0.6.0", features = ["router"] }
 dioxus-sdk = { version = "0.6", features = ["storage", "system_theme"] }
 serde = { version = "1.0", features = ["derive"] }
 chrono = "0.4"
-chrono-tz = "0.10"
 
 [features]
 default = ["web"]

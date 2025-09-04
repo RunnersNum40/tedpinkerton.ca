@@ -4,8 +4,11 @@ use dioxus::prelude::*;
 pub fn About() -> Element {
     rsx! {
         section {
-            id: "about", class: "section",
+            id: "about",
+            div { class: "container",
+                h1 { "About" }
+                p { class: "muted", "A little about me." }
+            }
         }
     }
 }
-
