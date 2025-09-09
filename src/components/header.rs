@@ -11,6 +11,8 @@ fn NavBar() -> Element {
         ("About", Route::About {}),
     ];
 
+    let current: Route = use_route();
+
     rsx! {
         nav { id: "navbar",
             a { href: "#main", class: "sr-only", "Skip to content" }
@@ -22,15 +24,22 @@ fn NavBar() -> Element {
                         "tedpinkerton.ca"
                     }
                 }
-                div { class: "nav-links",
-                    for (label, route) in links.iter() {
-                        Link {
-                            class: "nav-link",
-                            to: route.clone(),
-                            aria_label: "Switch to {label} page",
-                            "{label}"
+                div { class: "nav-right",
+                    div { class: "nav-links",
+                        for (label, route) in links.iter() {
+                            Link {
+                                class: "nav-link",
+                                active_class: "active",
+                                to: route.clone(),
+                                aria_label: "Switch to {label} page",
+                                "{label}"
+                                if current == *route {
+                                    span { class: "sr-only", " (current page)" }
+                                }
+                            }
                         }
                     }
+                    ThemeToggle {}
                 }
             }
         }
@@ -46,7 +55,6 @@ fn ThemeToggle() -> Element {
         Theme::Light => "Switch to dark theme",
         Theme::Dark => "Switch to light theme",
     };
-
     let label = match theme() {
         Theme::Light => "Dark",
         Theme::Dark => "Light",
@@ -70,21 +78,5 @@ fn ThemeToggle() -> Element {
 
 #[component]
 pub fn Header() -> Element {
-    let theme = use_context::<Signal<Theme>>();
-    let mut stored_setting = use_context::<Signal<StorageTheme>>();
-
-    let (aria_label, pressed) = match theme() {
-        Theme::Light => ("Switch to dark theme", false),
-        Theme::Dark => ("Switch to light theme", true),
-    };
-
-    let label = match theme() {
-        Theme::Light => "Dark",
-        Theme::Dark => "Light",
-    };
-
-    rsx! {
-        NavBar {}
-        ThemeToggle {}
-    }
+    rsx! { NavBar {} }
 }

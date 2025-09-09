@@ -25,8 +25,13 @@ enum Route {
 }
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
-const MAIN_CSS: Asset = asset!("/assets/main.css");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
+const TOKENS_CSS: Asset = asset!("/assets/css/tokens.css");
+const BASE_CSS: Asset = asset!("/assets/css/base.css");
+const LAYOUT_CSS: Asset = asset!("/assets/css/layout.css");
+const NAV_CSS: Asset = asset!("/assets/css/nav.css");
+const FOOTER_CSS: Asset = asset!("/assets/css/footer.css");
+const COMPONENTS_CSS: Asset = asset!("/assets/css/components.css");
 
 fn main() {
     dioxus::launch(App);
@@ -70,8 +75,14 @@ fn App() -> Element {
 
     rsx! {
         document::Link { rel: "icon", href: FAVICON }
-        document::Link { rel: "stylesheet", href: MAIN_CSS }
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
+
+        document::Link { rel: "stylesheet", href: TOKENS_CSS }
+        document::Link { rel: "stylesheet", href: BASE_CSS }
+        document::Link { rel: "stylesheet", href: LAYOUT_CSS }
+        document::Link { rel: "stylesheet", href: NAV_CSS }
+        document::Link { rel: "stylesheet", href: FOOTER_CSS }
+        document::Link { rel: "stylesheet", href: COMPONENTS_CSS }
 
         div { id: "app", "data-theme": "{theme()}",
             Router::<Route> {}
