@@ -7,7 +7,7 @@ pub fn Art() -> Element {
             id: "art",
             div { class: "site-container",
                 h1 { "Art" }
-                p { class: "muted", "A collection of my artwork." }
+                p { "A collection of my artwork." }
             }
         }
     }

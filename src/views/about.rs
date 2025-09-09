@@ -7,7 +7,7 @@ pub fn About() -> Element {
             id: "about",
             div { class: "site-container",
                 h1 { "About" }
-                p { class: "muted", "A little about me." }
+                p { "A little about me." }
             }
         }
     }

@@ -7,7 +7,7 @@ pub fn Projects() -> Element {
             id: "projects",
             div { class: "site-container",
                 h1 { "Projects" }
-                p { class: "muted", "A selection of my software projects." }
+                p { "A selection of projects." }
             }
         }
     }

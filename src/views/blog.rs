@@ -6,7 +6,7 @@ pub fn Blog() -> Element {
         section { id: "blog",
             div { class: "site-container",
                 h1 { "Blog" }
-                p { class: "muted", "Posts and notes on software engineering." }
+                p { "Posts and notes." }
             }
         }
     }
