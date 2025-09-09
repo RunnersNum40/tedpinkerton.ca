@@ -5,7 +5,7 @@ pub fn About() -> Element {
     rsx! {
         section {
             id: "about",
-            div { class: "container",
+            div { class: "site-container",
                 h1 { "About" }
                 p { class: "muted", "A little about me." }
             }

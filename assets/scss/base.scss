@@ -34,6 +34,9 @@ body,
     transition-duration: 0.01ms !important;
   }
 }
+:root {
+  color-scheme: light dark;
+}
 a {
   color: var(--link);
 }

@@ -4,11 +4,10 @@ use dioxus::prelude::*;
 pub fn Blog() -> Element {
     rsx! {
         section { id: "blog",
-            div { class: "container",
+            div { class: "site-container",
                 h1 { "Blog" }
                 p { class: "muted", "Posts and notes on software engineering." }
             }
         }
     }
 }
-

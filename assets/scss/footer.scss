@@ -1,9 +1,11 @@
+@use "./mixins";
+
 #footer {
   background: transparent;
 }
+
 #footer .footer-inner {
-  max-width: 72ch;
-  margin-inline: auto;
+  @include mixins.container(72ch);
   padding: 0.75rem 1rem 1.25rem;
   display: flex;
   align-items: center;
