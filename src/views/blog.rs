@@ -8,7 +8,7 @@ pub fn Blog() -> Element {
             id: "blog",
             name: "Blog",
             body: rsx! {
-                p { "Posts and notes." }
+                p { "Work in progress :)" }
             }
         }
     }

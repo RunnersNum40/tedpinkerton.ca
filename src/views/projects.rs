@@ -8,7 +8,15 @@ pub fn Projects() -> Element {
             id: "projects",
             name: "Projects",
             body: rsx! {
-                p { "A selection of projects." }
+                p { "Work in progress :)" }
+                p {
+                    "Check "
+                    Link {
+                        to: "/resume",
+                        "resume"
+                    }
+                     " for more details."
+                }
             },
         }
     }

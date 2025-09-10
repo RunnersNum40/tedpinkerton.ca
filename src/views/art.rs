@@ -8,7 +8,8 @@ pub fn Art() -> Element {
             id: "art",
             name: "Art",
             body: rsx! {
-                p { "A collection of my artwork." }
+                p { "Work in progress :)" }
+                p { "Imagine something cool." }
             }
         }
     }
