@@ -18,17 +18,42 @@ fn SiteLogo() -> Element {
 }
 
 #[component]
+fn NavItemLink(label: String, route: Route, enabled: bool) -> Element {
+    let current: Route = use_route();
+
+    rsx! {
+        if enabled {
+            Link {
+                class: "nav-link",
+                active_class: "active",
+                to: route.clone(),
+                aria_label: "Switch to {label} page",
+                "{label}"
+                if current == route {
+                    span { class: "sr-only", " (current page)" }
+                }
+            }
+        } else {
+            span {
+                class: "nav-link pointer-events-none opacity-50 cursor-not-allowed",
+                aria_disabled: "true",
+                title: "Coming soon",
+                "{label}"
+            }
+        }
+    }
+}
+
+#[component]
 fn NavBar() -> Element {
     let links = [
-        ("Home", Route::Home {}),
-        ("Blog", Route::Blog {}),
-        ("Projects", Route::Projects {}),
-        ("Art", Route::Art {}),
-        ("Contact", Route::Contact {}),
-        ("Resume", Route::Resume {}),
+        ("Home", Route::Home {}, true),
+        ("Blog", Route::Blog {}, false),
+        ("Projects", Route::Projects {}, false),
+        ("Art", Route::Art {}, false),
+        ("Contact", Route::Contact {}, true),
+        ("Resume", Route::Resume {}, true),
     ];
-
-    let current: Route = use_route();
 
     rsx! {
         nav { id: "navbar",
@@ -42,17 +67,8 @@ fn NavBar() -> Element {
                 }
                 div { class: "nav-right",
                     div { class: "nav-links",
-                        for (label, route) in links.iter() {
-                            Link {
-                                class: "nav-link",
-                                active_class: "active",
-                                to: route.clone(),
-                                aria_label: "Switch to {label} page",
-                                "{label}"
-                                if current == *route {
-                                    span { class: "sr-only", " (current page)" }
-                                }
-                            }
+                        for (label, route, enabled) in links.iter() {
+                            NavItemLink { label: *label, route: route.clone(), enabled: *enabled }
                         }
                     }
                     ThemeToggle {}
@@ -96,3 +112,4 @@ fn ThemeToggle() -> Element {
 pub fn Header() -> Element {
     rsx! { NavBar {} }
 }
+
