@@ -7,6 +7,7 @@ fn HomeContent() -> Element {
         div {
             p {
                 "Hello! Welcome to my corner of the matrix. "
+                "This is a work in progress, I plan to host some projects but for now it's just this small section. "
             }
             p {
                 "I'm Ted Pinkerton, an open source robotics and software enthusiast, a procedural artist, and a bit of an optimist. "

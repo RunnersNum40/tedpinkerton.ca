@@ -3,9 +3,6 @@
 .pointer-events-none {
   pointer-events: none;
 }
-.visible {
-  visibility: visible;
-}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -20,48 +17,14 @@
 .relative {
   position: relative;
 }
-.static {
-  position: static;
-}
 .top-\[0\.2rem\] {
   top: 0.2rem;
-}
-.top-\[0\.5rem\] {
-  top: 0.5rem;
-}
-.top-\[1rem\] {
-  top: 1rem;
-}
-.top-\[2px\] {
-  top: 2px;
-}
-.top-\[3px\] {
-  top: 3px;
-}
-.top-\[4px\] {
-  top: 4px;
-}
-.top-\[5px\] {
-  top: 5px;
-}
-.top-\[5rem\] {
-  top: 5rem;
 }
 .contents {
   display: contents;
 }
-.flex {
-  display: flex;
-}
 .cursor-not-allowed {
   cursor: not-allowed;
-}
-.flex-wrap {
-  flex-wrap: wrap;
-}
-.border {
-  border-style: var(--tw-border-style);
-  border-width: 1px;
 }
 .opacity-50 {
   opacity: 50%;
@@ -69,20 +32,6 @@
 .ring {
   --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-}
-.outline {
-  outline-style: var(--tw-outline-style);
-  outline-width: 1px;
-}
-.transition {
-  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-  transition-timing-function: var(--tw-ease, ease);
-  transition-duration: var(--tw-duration, 0s);
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-shadow {
   syntax: "*";
@@ -149,15 +98,9 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;
@@ -172,7 +115,6 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
     }
   }
 }
