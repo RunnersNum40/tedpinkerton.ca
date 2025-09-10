@@ -42,15 +42,18 @@ jobs:
         run: npx --yes --package tailwindcss@3.4.14 tailwindcss -i ./tailwind.css -o ./assets/tailwind.css --minify
 
       - name: Bundle site
-        run: dx bundle --platform web --release --out-dir dist
+        run: dx bundle --platform web --release
+
+      - name: Locate public dir
+        run: echo "PUBLIC_DIR=$(find target/dx -type d -path '*/web/public' -print -quit)" >> $GITHUB_ENV
 
       - name: SPA fallback for GitHub Pages
-        run: cp dist/index.html dist/404.html
+        run: cp "$PUBLIC_DIR/index.html" "$PUBLIC_DIR/404.html"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ${{ env.PUBLIC_DIR }}
 
   deploy:
     runs-on: ubuntu-latest
