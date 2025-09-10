@@ -14,10 +14,10 @@ fn HomeContent() -> Element {
                 "I plan to use that to get robots in space but it's slow going at the moment. "
                 "In general I just get a kick out of computers doing interesting things. "
             }
-            p {
-
-            }
-            p { "My other interests include, real time strategy games, electronic music, hiking, and rock or ice climbing." }
+            // p {
+            //     "I use all of the elitist tools: Arch Linux, Neovim, Rust, a Fixed Gear Bike, and an ergo-split Colmak keyboard. "
+            // }
+            // p { "My other interests include, real time strategy games, electronic music, hiking, and rock or ice climbing." }
         }
     }
 }
