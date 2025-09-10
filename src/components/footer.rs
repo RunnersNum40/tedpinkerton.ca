@@ -1,6 +1,8 @@
 use chrono::prelude::*;
 use dioxus::prelude::*;
 
+use crate::*;
+
 #[component]
 pub fn Footer() -> Element {
     let year = Local::now().year();
@@ -9,6 +11,7 @@ pub fn Footer() -> Element {
         footer { id: "footer",
             div { class: "footer-inner",
                 span { "© {year} Ted Pinkerton" }
+                SkuleWebring {  }
                 nav {
                     class: "footer-links",
                     Link {
@@ -16,12 +19,6 @@ pub fn Footer() -> Element {
                         "aria-label": "Site GitHub Repository Link",
                         to: "https://github.com/RunnersNum40/site",
                         "Site Source"
-                    }
-                    Link {
-                        class: "footer-link",
-                        "aria-label": "Skule Webring Link",
-                        to: "https://webring.skule.ca",
-                        "Skule webring"
                     }
                 }
             }
