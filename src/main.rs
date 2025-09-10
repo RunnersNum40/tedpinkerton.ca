@@ -23,6 +23,8 @@ enum Route {
         Art {},
         #[route("/contact/")]
         Contact {},
+        #[route("/resume/")]
+        Resume {},
 }
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");

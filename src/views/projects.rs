@@ -12,7 +12,7 @@ pub fn Projects() -> Element {
                 p {
                     "Check "
                     Link {
-                        to: "/resume",
+                        to: Route::Resume {},
                         "resume"
                     }
                      " for more details."

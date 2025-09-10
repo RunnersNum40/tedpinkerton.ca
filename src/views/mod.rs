@@ -15,3 +15,6 @@ pub use projects::Projects;
 
 mod header_footer;
 pub use header_footer::HeaderFooter;
+
+mod resume;
+pub use resume::Resume;
