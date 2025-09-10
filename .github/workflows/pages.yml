@@ -28,8 +28,12 @@ jobs:
         with:
           targets: wasm32-unknown-unknown
 
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-binstall
+
       - name: Install dioxus-cli
-        run: cargo install dioxus-cli
+        run: cargo binstall -y dioxus-cli
 
       - name: Build CSS
         run: |
