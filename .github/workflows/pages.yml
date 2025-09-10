@@ -21,9 +21,6 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Install Tailwind CLI
-        run: npm install -g tailwindcss
-
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
@@ -35,10 +32,14 @@ jobs:
       - name: Install dioxus-cli
         run: cargo binstall -y dioxus-cli
 
-      - name: Build CSS
-        run: |
-          mkdir -p assets
-          npx tailwindcss -i ./tailwind.css -o ./assets/tailwind.css --minify
+      - name: Build dirs
+        run: mkdir -p assets
+
+      - name: Build SCSS
+        run: npx --yes --package sass@1.77.8 sass --style=compressed --embed-source-map assets/scss/main.scss assets/main.css
+
+      - name: Build Tailwind CSS
+        run: npx --yes --package tailwindcss@3.4.14 tailwindcss -i ./tailwind.css -o ./assets/tailwind.css --minify
 
       - name: Bundle site
         run: dx bundle --platform web --release --out-dir dist
