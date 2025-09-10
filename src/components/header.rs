@@ -1,6 +1,22 @@
 use crate::{Route, StorageTheme, Theme};
 use dioxus::prelude::*;
 
+const ICON_LIGHT: Asset = asset!("/assets/icon_light.png");
+const ICON_DARK: Asset = asset!("/assets/icon_dark.png");
+
+#[component]
+fn SiteLogo() -> Element {
+    let theme = use_context::<Signal<Theme>>();
+    let src = match theme() {
+        Theme::Light => ICON_LIGHT,
+        Theme::Dark => ICON_DARK,
+    };
+
+    rsx! {
+        img { class: "logo relative top-[0.2rem]", src: "{src}", alt: "", aria_hidden: "true" }
+    }
+}
+
 #[component]
 fn NavBar() -> Element {
     let links = [
@@ -19,10 +35,9 @@ fn NavBar() -> Element {
             a { href: "#main", class: "sr-only", "Skip to content" }
             div { class: "nav-inner",
                 div { class: "nav-home",
-                    Link {
-                        class: "nav-home-link",
-                        to: Route::Home {},
-                        "tedpinkerton.ca"
+                    Link { class: "nav-home-link", to: Route::Home {},
+                        SiteLogo {}
+                        span { "tedpinkerton.ca" }
                     }
                 }
                 div { class: "nav-right",

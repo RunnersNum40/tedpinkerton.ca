@@ -27,7 +27,9 @@ enum Route {
         Resume {},
 }
 
-const FAVICON: Asset = asset!("/assets/favicon.ico");
+const FAVICON_LIGHT: Asset = asset!("/assets/favicon_light.ico");
+const FAVICON_DARK: Asset = asset!("/assets/favicon_dark.ico");
+
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
 
@@ -72,7 +74,11 @@ fn App() -> Element {
     use_context_provider(|| theme);
 
     rsx! {
-        document::Link { rel: "icon", href: FAVICON }
+        document::Title { "Ted Pinkerton" }
+
+        document::Link { rel: "icon", href: FAVICON_LIGHT, media: "(prefers-color-scheme: light)" }
+        document::Link { rel: "icon", href: FAVICON_DARK, media: "(prefers-color-scheme: dark)" }
+
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
 

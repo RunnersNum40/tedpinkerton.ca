@@ -1,8 +1,5 @@
 /*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
 @layer properties;
-.visible {
-  visibility: visible;
-}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -14,20 +11,38 @@
   white-space: nowrap;
   border-width: 0;
 }
-.static {
-  position: static;
+.relative {
+  position: relative;
+}
+.top-\[0\.2rem\] {
+  top: 0.2rem;
+}
+.top-\[0\.5rem\] {
+  top: 0.5rem;
+}
+.top-\[1rem\] {
+  top: 1rem;
+}
+.top-\[2px\] {
+  top: 2px;
+}
+.top-\[3px\] {
+  top: 3px;
+}
+.top-\[4px\] {
+  top: 4px;
+}
+.top-\[5px\] {
+  top: 5px;
+}
+.top-\[5rem\] {
+  top: 5rem;
+}
+.contents {
+  display: contents;
 }
 .flex {
   display: flex;
-}
-.hidden {
-  display: none;
-}
-.table {
-  display: table;
-}
-.resize {
-  resize: both;
 }
 .flex-wrap {
   flex-wrap: wrap;
