@@ -1,5 +1,8 @@
 /*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
 @layer properties;
+.visible {
+  visibility: visible;
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -16,6 +19,15 @@
 }
 .flex {
   display: flex;
+}
+.hidden {
+  display: none;
+}
+.table {
+  display: table;
+}
+.resize {
+  resize: both;
 }
 .flex-wrap {
   flex-wrap: wrap;
