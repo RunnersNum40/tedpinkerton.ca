@@ -8,7 +8,7 @@ fn NavBar() -> Element {
         ("Blog", Route::Blog {}),
         ("Projects", Route::Projects {}),
         ("Art", Route::Art {}),
-        ("About", Route::About {}),
+        ("Contact", Route::Contact {}),
     ];
 
     let current: Route = use_route();

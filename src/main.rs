@@ -5,6 +5,7 @@ mod components;
 mod theme;
 mod views;
 
+use components::*;
 use theme::*;
 use views::*;
 
@@ -20,8 +21,8 @@ enum Route {
         Projects {},
         #[route("/art/")]
         Art {},
-        #[route("/about/")]
-        About {},
+        #[route("/contact/")]
+        Contact {},
 }
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");

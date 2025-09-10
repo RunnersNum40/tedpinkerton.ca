@@ -1,5 +1,5 @@
-mod about;
-pub use about::About;
+mod contact;
+pub use contact::Contact;
 
 mod art;
 pub use art::Art;

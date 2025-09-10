@@ -1,12 +1,13 @@
+use crate::*;
 use dioxus::prelude::*;
 
 #[component]
 pub fn Art() -> Element {
     rsx! {
-        section {
+        Page {
             id: "art",
-            div { class: "site-container",
-                h1 { "Art" }
+            name: "Art",
+            body: rsx! {
                 p { "A collection of my artwork." }
             }
         }
