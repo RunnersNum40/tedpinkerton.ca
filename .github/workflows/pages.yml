@@ -39,7 +39,7 @@ jobs:
         run: npx --yes --package sass@latest sass --style=compressed --embed-source-map assets/scss/main.scss assets/main.css
 
       - name: Build Tailwind CSS
-        run: npx --yes --package tailwindcss@latest tailwindcss -i ./tailwind.css -o ./assets/tailwind.css --minify
+        run: npx @tailwindcss/cli@latest -i ./tailwind.css -o ./assets/tailwind.css --minify
 
       - name: Bundle site
         run: dx bundle --platform web --release
