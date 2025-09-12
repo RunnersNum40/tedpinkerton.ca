@@ -35,10 +35,11 @@ fn NavItemLink(label: String, route: Route, enabled: bool) -> Element {
             }
         } else {
             span {
-                class: "nav-link pointer-events-none opacity-50 cursor-not-allowed",
+                class: "nav-link opacity-50 cursor-not-allowed",
                 aria_disabled: "true",
                 title: "Coming soon",
                 "{label}"
+                span { class: "sr-only", " (coming soon)" }
             }
         }
     }
@@ -112,4 +113,3 @@ fn ThemeToggle() -> Element {
 pub fn Header() -> Element {
     rsx! { NavBar {} }
 }
-
