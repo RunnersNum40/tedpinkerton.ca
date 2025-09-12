@@ -74,6 +74,7 @@ fn App() -> Element {
     use_context_provider(|| theme);
 
     rsx! {
+        document::Meta { name: "viewport", content: "width=device-width, initial-scale=1" }
         document::Title { "Ted Pinkerton" }
 
         document::Link { rel: "icon", href: FAVICON_LIGHT, media: "(prefers-color-scheme: light)" }

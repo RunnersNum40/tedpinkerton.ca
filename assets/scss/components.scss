@@ -106,6 +106,12 @@
   border-radius: 8px;
 }
 
+@media (max-width: 480px) {
+  .pdf-frame {
+    height: 65vh;
+  }
+}
+
 .pdf-actions {
   margin-top: 0.5rem;
   display: flex;
