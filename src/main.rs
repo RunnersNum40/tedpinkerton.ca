@@ -27,11 +27,11 @@ enum Route {
         Resume {},
 }
 
-const FAVICON_LIGHT: Asset = asset!("/assets/favicon_light.ico");
-const FAVICON_DARK: Asset = asset!("/assets/favicon_dark.ico");
+const FAVICON_LIGHT: Asset = asset!("/assets/icons/favicon_light.ico");
+const FAVICON_DARK: Asset = asset!("/assets/icons/favicon_dark.ico");
 
-const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
-const MAIN_CSS: Asset = asset!("/assets/main.css");
+const TAILWIND_CSS: Asset = asset!("/assets/css/tailwind.css");
+const MAIN_CSS: Asset = asset!("/assets/css/main.css");
 
 fn main() {
     dioxus::launch(App);

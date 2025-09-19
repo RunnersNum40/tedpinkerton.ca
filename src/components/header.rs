@@ -1,8 +1,8 @@
 use crate::{Route, StorageTheme, Theme};
 use dioxus::prelude::*;
 
-const ICON_LIGHT: Asset = asset!("/assets/icon_light.png");
-const ICON_DARK: Asset = asset!("/assets/icon_dark.png");
+const ICON_LIGHT: Asset = asset!("/assets/icons/icon_light.png");
+const ICON_DARK: Asset = asset!("/assets/icons/icon_dark.png");
 
 #[component]
 fn SiteLogo() -> Element {
