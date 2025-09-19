@@ -18,3 +18,6 @@ pub use header_footer::HeaderFooter;
 
 mod resume;
 pub use resume::Resume;
+
+mod badge;
+pub use badge::Badge;

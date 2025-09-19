@@ -12,6 +12,8 @@ use views::*;
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
 enum Route {
+    #[route("/badge/")]
+    Badge {},
     #[layout(HeaderFooter)]
         #[route("/")]
         Home {},
