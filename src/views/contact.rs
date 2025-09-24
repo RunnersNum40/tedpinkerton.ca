@@ -30,8 +30,8 @@ fn AboutContent() -> Element {
                         Link {
                             class: "social-link",
                             aria_label: "Send email to p_t@fastmail.net",
-                            to: "mailto:p_t@fastmail.net",
-                            "p_t@fastmail.net"
+                            to: "mailto:ted@tedpinkerton.ca",
+                            "ted@tedpinkerton.ca"
                         }
                     }
                 }
@@ -50,4 +50,3 @@ pub fn Contact() -> Element {
         }
     }
 }
-
