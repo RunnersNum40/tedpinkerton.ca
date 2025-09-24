@@ -27,6 +27,8 @@
 
   .nav-link,
   .nav-home-link {
+    display: inline-flex;
+    align-items: center;
     color: var(--fg);
     text-decoration: none;
     &:hover,

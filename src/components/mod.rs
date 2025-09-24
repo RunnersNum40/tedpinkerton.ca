@@ -9,3 +9,6 @@ pub use page::Page;
 
 mod webring;
 pub use webring::SkuleWebring;
+
+mod logo;
+pub use logo::Logo;
