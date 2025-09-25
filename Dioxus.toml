@@ -1,5 +1,6 @@
 [application]
 out_dir = "dist"
+assets_dir = "assets"
 
 [web.app]
 title = "tedpinkerton"

@@ -8,7 +8,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -20,6 +20,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+          cache: "npm"
+
+      - name: Install JS deps for npx
+        run: npm ci
 
       - uses: dtolnay/rust-toolchain@stable
         with:
@@ -31,15 +35,6 @@ jobs:
 
       - name: Install dioxus-cli
         run: cargo binstall -y dioxus-cli
-
-      - name: Build dirs
-        run: mkdir -p assets
-
-      - name: Build SCSS
-        run: npx --yes --package sass@latest sass --style=compressed --embed-source-map assets/scss/main.scss assets/main.css
-
-      - name: Build Tailwind CSS
-        run: npx @tailwindcss/cli@latest -c tailwind.config.js -o ./assets/css/tailwind.css --minify
 
       - name: Bundle site
         run: dx bundle --platform web --release
