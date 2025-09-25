@@ -2,3 +2,5 @@
 .DS_Store
 
 **/*.rs.bk
+
+assets/css/tailwind.css
