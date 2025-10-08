@@ -16,7 +16,7 @@ pub fn Blog() -> Element {
                     ul { class: "blog-list",
                         for (title, date, summary, link) in previews {
                             li { class: "blog-item", key: "{link}",
-                                BlogPostPreview { title, date, summary, link }
+                                BlogPostPreview { title, date, summary, link: link.clone() }
                             }
                         }
                     }
@@ -25,3 +25,4 @@ pub fn Blog() -> Element {
         }
     }
 }
+
