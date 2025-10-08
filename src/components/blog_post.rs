@@ -85,11 +85,10 @@ pub fn BlogPost(slug: String) -> Element {
                 return rsx! {
                     Page {
                         id: "blog-post",
-                        name: meta.title.clone(),
                         body: rsx! {
                             article { class: "blog-post",
                                 p { class: "muted small",
-                                    time { datetime: "{iso}", "{human}" }
+                                    time { datetime: "{iso}", "on {human}" }
                                 }
                                 Markdown { src: body.to_string() }
                             }
@@ -143,7 +142,7 @@ pub fn BlogPostPreview(title: String, date: NaiveDate, summary: String, link: St
                 key: "{link}",
                 header { class: "blog-card-head",
                     p {
-                        time { datetime: "{iso}", "{human}" }
+                        time { datetime: "{iso}", "on {human}" }
                     }
                     h1 {
                         "{title}"
