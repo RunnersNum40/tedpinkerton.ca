@@ -1,0 +1,78 @@
+@use "./mixins";
+
+.blog-list {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+.blog-item {
+  list-style: none;
+}
+
+.blog-card {
+  @extend %card;
+  position: relative;
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.75rem 0.875rem;
+  transition:
+    border-color 0.15s,
+    transform 0.06s;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: var(--muted);
+  }
+
+  &-head {
+    time {
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.2;
+    }
+    h1,
+    h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.35;
+    }
+  }
+
+  &-summary {
+    margin: 0.25rem 0 0;
+  }
+}
+
+.blog-post {
+  > p:first-child time {
+    color: var(--muted);
+    font-size: 0.875rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    margin: 1.25rem 0 0.6rem;
+    font-size: clamp(1.25rem, 1rem + 1.1vw, 1.6rem);
+    line-height: 1.35;
+  }
+  h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.25rem);
+    line-height: 1.35;
+  }
+
+  ul {
+    @include mixins.prose-list(disc);
+  }
+  ol {
+    @include mixins.prose-list(decimal);
+  }
+
+  li > ul {
+    list-style: circle;
+  }
+  li > ol {
+    list-style: lower-alpha;
+  }
+}

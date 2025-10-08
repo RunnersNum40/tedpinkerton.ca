@@ -33,7 +33,7 @@ fn NavItemLink(label: String, route: Route, enabled: bool) -> Element {
 fn NavBar() -> Element {
     let links = [
         ("Home", Route::Home {}, true),
-        ("Blog", Route::Blog {}, false),
+        ("Blog", Route::Blog {}, true),
         ("Projects", Route::Projects {}, false),
         ("Art", Route::Art {}, false),
         ("Contact", Route::Contact {}, true),

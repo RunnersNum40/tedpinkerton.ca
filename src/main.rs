@@ -19,6 +19,8 @@ enum Route {
         Home {},
         #[route("/blog/")]
         Blog {},
+        #[route("/blog/:slug")]
+        BlogPost { slug: String },
         #[route("/projects/")]
         Projects {},
         #[route("/art/")]

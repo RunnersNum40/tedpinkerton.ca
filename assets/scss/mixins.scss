@@ -21,3 +21,25 @@
   line-height: 1;
   @include focus-ring;
 }
+
+%card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--fg);
+}
+
+@mixin prose-list($type) {
+  list-style: $type;
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 1rem;
+
+  li {
+    margin: 0.25rem 0;
+  }
+
+  li > ul,
+  li > ol {
+    margin: 0.25rem 0 0.5rem;
+  }
+}
