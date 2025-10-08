@@ -8,7 +8,6 @@ pub fn Blog() -> Element {
     rsx! {
         Page {
             id: "blog",
-            name: "Blog",
             body: rsx! {
                 if previews.is_empty() {
                     p { "No posts yet." }
@@ -25,4 +24,3 @@ pub fn Blog() -> Element {
         }
     }
 }
-
