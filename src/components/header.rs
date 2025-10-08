@@ -4,16 +4,20 @@ use dioxus::prelude::*;
 #[component]
 fn NavItemLink(label: String, route: Route, enabled: bool) -> Element {
     let current: Route = use_route();
+    let is_active = match (&route, &current) {
+        (Route::Blog {}, Route::BlogPost { .. }) => true,
+        _ => current == route,
+    };
 
     rsx! {
         if enabled {
             Link {
-                class: "nav-link",
-                active_class: "active",
+                class: if is_active { "nav-link active" } else { "nav-link" },
                 to: route.clone(),
                 aria_label: "Switch to {label} page",
+                aria_current: if is_active { "page" } else { "false" },
                 "{label}"
-                if current == route {
+                if is_active {
                     span { class: "sr-only", " (current page)" }
                 }
             }
