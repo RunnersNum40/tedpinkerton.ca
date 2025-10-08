@@ -3,6 +3,8 @@ title: "Six Day Week Calendar"
 date: 2025-10-06
 ---
 
+# A Six Day Week Calendar System
+
 The current Gregorian calendar has several limitations that I find very inelegant.
 
 1. Prime number of days in a week
