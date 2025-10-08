@@ -75,4 +75,10 @@
   li > ol {
     list-style: lower-alpha;
   }
+
+  :is(p, li)
+    > :is(span, a, em, strong, code)
+    + :is(span, a, em, strong, code)::before {
+    content: " ";
+  }
 }
