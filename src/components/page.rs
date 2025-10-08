@@ -2,7 +2,7 @@ use crate::*;
 use dioxus::prelude::*;
 
 #[component]
-pub fn Page(id: String, name: String, body: Element) -> Element {
+pub fn Page(id: String, name: Option<String>, body: Element) -> Element {
     let path: Route = use_route();
 
     let rendered_path = match path {
@@ -19,7 +19,9 @@ pub fn Page(id: String, name: String, body: Element) -> Element {
         section {
             id: "{id}",
             div { class: "site-container",
-                h1 { "{name}" }
+                if let Some(name) = name {
+                    h1 { "{name}" }
+                }
                 {body}
             }
         }
