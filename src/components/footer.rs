@@ -10,7 +10,7 @@ pub fn Footer() -> Element {
     rsx! {
         footer { id: "footer",
             div { class: "footer-inner",
-                span { "© {year} Ted Pinkerton" }
+                span { "© {year} Theodore Pinkerton" }
                 SkuleWebring {  }
                 nav {
                     class: "footer-links",
