@@ -1,7 +1,6 @@
 use crate::*;
 use chrono::NaiveDate;
 use dioxus::prelude::*;
-use dioxus_markdown::Markdown;
 use include_dir::{Dir, DirEntry, include_dir};
 
 static BLOG_DIR: Dir<'_> = include_dir!("$CARGO_MANIFEST_DIR/content/blog");
@@ -43,12 +42,14 @@ struct RawFrontMatter {
     date: String,
     #[serde(default)]
     summary: Option<String>,
+    draft: Option<bool>,
 }
 
 struct Meta {
     title: String,
     date: NaiveDate,
     summary: Option<String>,
+    draft: Option<bool>,
 }
 
 fn parse_front_matter(fm: &str) -> Option<Meta> {
@@ -58,6 +59,7 @@ fn parse_front_matter(fm: &str) -> Option<Meta> {
         title: raw.title,
         date,
         summary: raw.summary,
+        draft: raw.draft,
     })
 }
 
@@ -90,7 +92,7 @@ pub fn BlogPost(slug: String) -> Element {
                                 p { class: "muted small",
                                     time { datetime: "{iso}", "on {human}" }
                                 }
-                                Markdown { src: body.to_string() }
+                                Markdown { content: body.to_string() }
                             }
                         }
                     }
@@ -115,11 +117,13 @@ pub fn all_blog_previews() -> Vec<(String, NaiveDate, String, String)> {
         if let Some(content) = get_file(&slug) {
             if let Some((fm_raw, body)) = split_front_matter(&content) {
                 if let Some(meta) = parse_front_matter(fm_raw) {
-                    let summary = meta
-                        .summary
-                        .unwrap_or_else(|| first_paragraph_summary(body));
-                    let link = format!("/blog/{}", slug);
-                    items.push((meta.title, meta.date, summary, link));
+                    if !meta.draft.unwrap_or(false) || cfg!(debug_assertions) {
+                        let summary = meta
+                            .summary
+                            .unwrap_or_else(|| first_paragraph_summary(body));
+                        let link = format!("/blog/{}", slug);
+                        items.push((meta.title, meta.date, summary, link));
+                    }
                 }
             }
         }

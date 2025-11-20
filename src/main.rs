@@ -1,5 +1,8 @@
 use dioxus::prelude::*;
-use dioxus_sdk::{storage::*, theme::*};
+use dioxus_sdk_storage::*;
+use dioxus_sdk_window::theme::{
+    Theme as SystemTheme, ThemeError as SystemThemeError, use_system_theme,
+};
 
 mod components;
 mod theme;

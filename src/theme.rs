@@ -1,6 +1,7 @@
 use dioxus::prelude::*;
-use dioxus_sdk::{storage::*, theme::*};
-use serde::{de::DeserializeOwned, Deserialize, Serialize};
+use dioxus_sdk_storage::*;
+use dioxus_sdk_window::theme::{Theme as SystemTheme, use_system_theme};
+use serde::{Deserialize, Serialize, de::DeserializeOwned};
 use std::fmt;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]

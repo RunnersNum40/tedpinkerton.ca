@@ -5,10 +5,11 @@ edition = "2024"
 
 [dependencies]
 chrono = "0.4"
-dioxus = { version = "0.6", features = ["router"] }
-dioxus-markdown = "0.0.1"
-dioxus-sdk = { version = "0.6", features = ["storage", "system_theme"] }
+dioxus = { version = "0.7", features = ["router"] }
+dioxus-sdk-storage = "0.7"
+dioxus-sdk-window = "0.7"
 include_dir = { version = "0.7", features = ["glob"] }
+pulldown-cmark = "0.13"
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.9"
 
@@ -19,12 +20,12 @@ mobile = ["dioxus/mobile"]
 web = ["dioxus/web"]
 
 [profile]
-[profile.wasm-dev]
+[profile.android-dev]
 inherits = "dev"
-opt-level = 1
 
 [profile.server-dev]
 inherits = "dev"
 
-[profile.android-dev]
+[profile.wasm-dev]
 inherits = "dev"
+opt-level = 1

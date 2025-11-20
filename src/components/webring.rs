@@ -1,7 +1,6 @@
 use crate::theme::Theme;
 use dioxus::prelude::*;
 
-
 #[component]
 pub fn SkuleWebring() -> Element {
     let SITE_URL = "https://tedpinkerton.ca";
@@ -9,7 +8,7 @@ pub fn SkuleWebring() -> Element {
     let theme = use_context::<Signal<Theme>>();
     let icon = match theme() {
         Theme::Light => "https://webring.skule.ca/img/icon.svg",
-        Theme::Dark  => "https://webring.skule.ca/img/icon-dark.svg",
+        Theme::Dark => "https://webring.skule.ca/img/icon-dark.svg",
     };
 
     rsx! {
