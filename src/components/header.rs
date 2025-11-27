@@ -84,8 +84,7 @@ fn ThemeToggle() -> Element {
     rsx! {
         button {
             id: "theme-toggle",
-            class: "btn icon-btn",
-            r#type: "button",
+            class: "btn",
             "aria-label": aria_label,
             onclick: move |_| {
                 let next = theme().toggle();
