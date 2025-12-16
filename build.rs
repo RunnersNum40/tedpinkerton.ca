@@ -27,3 +27,4 @@ fn main() {
         .expect("tailwind failed");
     assert!(status.success(), "tailwind build failed");
 }
+

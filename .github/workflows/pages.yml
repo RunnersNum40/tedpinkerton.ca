@@ -12,51 +12,37 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "npm"
-
-      - name: Install JS deps for npx
-        run: npm ci
-
-      - uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: wasm32-unknown-unknown
-
-      - uses: taiki-e/install-action@v2
-        with:
-          tool: cargo-binstall
-
-      - name: Install dioxus-cli
-        run: cargo binstall -y dioxus-cli
-
-      - name: Bundle site
-        run: dx bundle --platform web --release
-
-      - name: Locate public dir
-        run: echo "PUBLIC_DIR=$(find target/dx -type d -path '*/web/public' -print -quit)" >> $GITHUB_ENV
-
-      - name: SPA fallback for GitHub Pages
-        run: cp "$PUBLIC_DIR/index.html" "$PUBLIC_DIR/404.html"
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ${{ env.PUBLIC_DIR }}
-
   deploy:
     runs-on: ubuntu-latest
-    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - name: Install JS deps for npx
+        run: npm ci
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-binstall
+      - name: Install dioxus-cli
+        run: cargo binstall -y dioxus-cli
+      - name: Bundle site
+        run: dx bundle --platform web --release --locked --out-dir site
+      - name: Move from public dir
+        run: mv site/public/* site
+      - name: SPA fallback for GitHub Pages
+        run: cp site/index.html site/404.html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
