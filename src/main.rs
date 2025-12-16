@@ -38,7 +38,7 @@ const FAVICON_LIGHT: Asset = asset!("/assets/icons/favicon_light.ico");
 const FAVICON_DARK: Asset = asset!("/assets/icons/favicon_dark.ico");
 
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
-const MAIN_CSS: Asset = asset!("/assets/main.css");
+const MAIN_CSS: Asset = asset!("/assets/scss/main.scss");
 
 fn main() {
     dioxus::launch(App);

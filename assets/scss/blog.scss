@@ -19,6 +19,10 @@
   transition:
     border-color 0.15s,
     transform 0.06s;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--fg);
+  border-radius: 8px;
 
   &:hover {
     transform: translateY(-1px);
