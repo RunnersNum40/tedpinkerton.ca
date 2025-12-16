@@ -42,7 +42,7 @@ pub fn Markdown(props: MarkdownProps) -> Element {
         div {
             id: "{id_value}",
             class: "{class_value}",
-            dangerous_inner_html: "{html_signal()}"
+            dangerous_inner_html: "{html_signal()}",
         }
     }
 }

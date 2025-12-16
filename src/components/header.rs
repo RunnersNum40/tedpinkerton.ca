@@ -56,8 +56,12 @@ fn NavBar() -> Element {
                 }
                 div { class: "nav-right",
                     div { class: "nav-links",
-                        for (label, route, enabled) in links.iter() {
-                            NavItemLink { label: *label, route: route.clone(), enabled: *enabled }
+                        for (label , route , enabled) in links.iter() {
+                            NavItemLink {
+                                label: *label,
+                                route: route.clone(),
+                                enabled: *enabled,
+                            }
                         }
                     }
                     ThemeToggle {}
@@ -98,5 +102,7 @@ fn ThemeToggle() -> Element {
 
 #[component]
 pub fn Header() -> Element {
-    rsx! { NavBar {} }
+    rsx! {
+        NavBar {}
+    }
 }

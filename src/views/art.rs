@@ -10,7 +10,7 @@ pub fn Art() -> Element {
             body: rsx! {
                 p { "Work in progress :)" }
                 p { "Imagine something cool." }
-            }
+            },
         }
     }
 }

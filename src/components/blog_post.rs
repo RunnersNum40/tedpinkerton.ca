@@ -94,7 +94,7 @@ pub fn BlogPost(slug: String) -> Element {
                                 }
                                 Markdown { content: body.to_string() }
                             }
-                        }
+                        },
                     }
                 };
             }
@@ -105,7 +105,9 @@ pub fn BlogPost(slug: String) -> Element {
         Page {
             id: "blog-post",
             name: "Not found",
-            body: rsx! { p { "Post not found." } }
+            body: rsx! {
+                p { "Post not found." }
+            },
         }
     }
 }
@@ -139,18 +141,13 @@ pub fn BlogPostPreview(title: String, date: NaiveDate, summary: String, link: St
     let human = date.format("%B %d, %Y").to_string();
 
     rsx! {
-        Link {
-            to: link.clone(),
-            article {
-                class: "blog-card",
-                key: "{link}",
+        Link { to: link.clone(),
+            article { class: "blog-card", key: "{link}",
                 header { class: "blog-card-head",
                     p {
                         time { datetime: "{iso}", "on {human}" }
                     }
-                    h1 {
-                        "{title}"
-                    }
+                    h1 { "{title}" }
                 }
                 p { class: "blog-card-summary", "{summary}" }
             }

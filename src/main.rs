@@ -84,14 +84,20 @@ fn App() -> Element {
         document::Meta { name: "viewport", content: "width=device-width, initial-scale=1" }
         document::Title { "Ted Pinkerton" }
 
-        document::Link { rel: "icon", href: FAVICON_LIGHT, media: "(prefers-color-scheme: light)" }
-        document::Link { rel: "icon", href: FAVICON_DARK, media: "(prefers-color-scheme: dark)" }
+        document::Link {
+            rel: "icon",
+            href: FAVICON_LIGHT,
+            media: "(prefers-color-scheme: light)",
+        }
+        document::Link {
+            rel: "icon",
+            href: FAVICON_DARK,
+            media: "(prefers-color-scheme: dark)",
+        }
 
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
 
-        div { id: "app", "data-theme": "{theme()}",
-            Router::<Route> {}
-        }
+        div { id: "app", "data-theme": "{theme()}", Router::<Route> {} }
     }
 }

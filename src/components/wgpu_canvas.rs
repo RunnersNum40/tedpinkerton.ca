@@ -123,7 +123,7 @@ pub fn WgpuCanvas() -> Element {
             id: "wgpu-canvas",
             width: 800,
             height: 600,
-            style: "border: 1px solid #444; display: block;"
+            style: "border: 1px solid #444; display: block;",
         }
     }
 }

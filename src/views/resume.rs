@@ -15,7 +15,7 @@ pub fn Resume() -> Element {
                         title: "Ted Pinkerton resume (PDF)",
                         src: "{RESUME_PDF}",
                         width: "100%",
-                        class: "pdf-frame"
+                        class: "pdf-frame",
                     }
                     p { class: "sr-only", "If the PDF is not visible, use the links below." }
                     p { class: "pdf-actions",
@@ -26,15 +26,10 @@ pub fn Resume() -> Element {
                             "Download PDF"
                         }
                         " "
-                        Link {
-                            to: "{RESUME_PDF}",
-                            rel: "noopener",
-                            class: "btn",
-                            "Open in new tab"
-                        }
+                        Link { to: "{RESUME_PDF}", rel: "noopener", class: "btn", "Open in new tab" }
                     }
                 }
-            }
+            },
         }
     }
 }

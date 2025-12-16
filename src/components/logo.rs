@@ -13,6 +13,11 @@ pub fn Logo() -> Element {
     };
 
     rsx! {
-        img { class: "logo relative top-[0.2rem]", src: "{src}", alt: "", aria_hidden: "true" }
+        img {
+            class: "logo relative top-[0.2rem]",
+            src: "{src}",
+            alt: "",
+            aria_hidden: "true",
+        }
     }
 }

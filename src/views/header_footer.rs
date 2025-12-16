@@ -8,9 +8,7 @@ use dioxus::prelude::*;
 pub fn HeaderFooter() -> Element {
     rsx! {
         Header {}
-        main { id: "main",
-            Outlet::<Route> {}
-        }
+        main { id: "main", Outlet::<Route> {} }
         Footer {}
     }
 }

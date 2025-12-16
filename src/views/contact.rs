@@ -43,10 +43,6 @@ fn AboutContent() -> Element {
 #[component]
 pub fn Contact() -> Element {
     rsx! {
-        Page {
-            id: "about",
-            name: "Contact",
-            body: AboutContent()
-        }
+        Page { id: "about", name: "Contact", body: AboutContent() }
     }
 }

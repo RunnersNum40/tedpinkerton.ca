@@ -11,9 +11,8 @@ pub fn Footer() -> Element {
         footer { id: "footer",
             div { class: "footer-inner",
                 span { "© {year} Theodore Pinkerton" }
-                SkuleWebring {  }
-                nav {
-                    class: "footer-links",
+                SkuleWebring {}
+                nav { class: "footer-links",
                     Link {
                         class: "footer-link",
                         "aria-label": "Site GitHub Repository Link",

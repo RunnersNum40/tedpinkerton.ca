@@ -13,14 +13,19 @@ pub fn Blog() -> Element {
                     p { "No posts yet." }
                 } else {
                     ul { class: "blog-list",
-                        for (title, date, summary, link) in previews {
+                        for (title , date , summary , link) in previews {
                             li { class: "blog-item", key: "{link}",
-                                BlogPostPreview { title, date, summary, link: link.clone() }
+                                BlogPostPreview {
+                                    title,
+                                    date,
+                                    summary,
+                                    link: link.clone(),
+                                }
                             }
                         }
                     }
                 }
-            }
+            },
         }
     }
 }

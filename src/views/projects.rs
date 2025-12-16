@@ -11,11 +11,8 @@ pub fn Projects() -> Element {
                 p { "Work in progress :)" }
                 p {
                     "Check "
-                    Link {
-                        to: Route::Resume {},
-                        "resume"
-                    }
-                     " for more details."
+                    Link { to: Route::Resume {}, "resume" }
+                    " for more details."
                 }
             },
         }

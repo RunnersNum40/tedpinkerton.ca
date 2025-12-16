@@ -23,10 +23,7 @@ pub fn SkuleWebring() -> Element {
                 class: "webring-center",
                 to: "https://webring.skule.ca/#{SITE_URL}",
                 rel: "noopener noreferrer",
-                img {
-                    src: "{icon}",
-                    alt: "Skule WebRing"
-                }
+                img { src: "{icon}", alt: "Skule WebRing" }
             }
             Link {
                 class: "webring-arrow",

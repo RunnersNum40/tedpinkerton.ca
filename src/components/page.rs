@@ -16,8 +16,7 @@ pub fn Page(id: String, name: Option<String>, body: Element) -> Element {
 
     rsx! {
         document::Title { "tedpinkerton{rendered_path}" }
-        section {
-            id: "{id}",
+        section { id: "{id}",
             div { class: "site-container",
                 if let Some(name) = name {
                     h1 { "{name}" }
