@@ -16,7 +16,7 @@ pub fn Footer() -> Element {
                     Link {
                         class: "footer-link",
                         "aria-label": "Site GitHub Repository Link",
-                        to: "https://github.com/RunnersNum40/site",
+                        to: "https://github.com/RunnersNum40/tedpinkerton.ca",
                         "Site Source"
                     }
                 }
