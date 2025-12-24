@@ -9,6 +9,11 @@ pub fn Blog() -> Element {
         Page {
             id: "blog",
             body: rsx! {
+                h1 {
+                    "100% Human Generated Content"
+                }
+                br {}
+
                 if previews.is_empty() {
                     p { "No posts yet." }
                 } else {
