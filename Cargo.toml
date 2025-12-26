@@ -33,7 +33,7 @@ web-sys = { version = "0.3", features = [
   "Window",
   "console",
 ] }
-wgpu = { version = "27.0", features = ["webgl"] }
+wgpu = { version = "28.0", features = ["webgl"] }
 
 [features]
 default = ["web"]
