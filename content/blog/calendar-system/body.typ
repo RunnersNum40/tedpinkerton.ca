@@ -1,9 +1,4 @@
----
-title: "Six Day Week Calendar"
-date: 2025-10-06
----
-
-# A Six Day Week Calendar System
+= A Six Day Week Calendar System
 
 The current Gregorian calendar has several limitations that I find very inelegant.
 
@@ -16,7 +11,7 @@ All of these issues make it difficult to plan cleanly.
 For example, if I would like to perform some task every other day it will fall on different days of the week every other week.
 Or if I want to spend half a month on a project it will not be a whole number of weeks or even days.
 
-## Weeks
+== Weeks
 
 I propose a six day week system.
 To achieve this I would remove Thursday since it's the most boring day of the week.
@@ -27,7 +22,7 @@ This is a compromise between the five day work week norm and the four day work w
 Six also has the advantage of been the smallest number with two unique prime factors (2 and 3).
 This means that it can be divided into halves and thirds cleanly making scheduling much easier.
 
-## Months and Years
+== Months and Years
 
 I propose a twelve month year.
 Twelve months is already the norm and twelve has four prime factors with three unique ones (2, 3, and 4).
@@ -42,12 +37,12 @@ When in the year this week occurs is flexible but after December fits the curren
 
 Disregarding the special new year's week the year would have 60 weeks which divides cleanly by many factors (1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60).
 
-### Removing Months
+=== Removing Months
 
 Months aren't really necessary in this system but they are a useful way to break up the year into manageable chunks.
 Completely removing months would be a more radical change and would make it harder to adapt to the new system.
 
-## Notation
+== Notation
 
 Notation is important for a calendar system.
 I'd like a simple notation that is easy to read and write.
@@ -55,7 +50,7 @@ YYYY-MM-DD is a good format for this.
 It is easy to parse and understand and sorting lexicographically or numerically will yield the same result in the correct order.
 I would notate the extra week as month 00 of the following year.
 
-## Paths to Adoption
+== Paths to Adoption
 
 Realistically this system will never be adopted.
 Calendar reform is notoriously difficult and the Gregorian calendar is deeply entrenched in global culture.
@@ -66,7 +61,7 @@ Other planets have different orbital periods and day lengths so this exact syste
 Another path would be as a secondary calendar system used alongside the Gregorian calendar for specific purposes such as business or project management.
 It could be adopted by a specific community or organization as their official calendar system and used internally.
 
-## Problems
+== Problems
 
 Despite the focus on divisibility the year technically has 61 weeks and a week that usually has 5 days.
 If everyone chose to treat the extra week as a holiday period this would not be a problem but it could be an issue if people wanted to schedule things during that week.
@@ -77,7 +72,7 @@ I believe it would be possible to adapt religious observances to the new system 
 A special week would add some complexity to timekeeping systems and software that would need to be updated to handle the new system.
 I think this is a minor problem compared to the complexity of the current system.
 
-## Benefits
+== Benefits
 
 - Every year and month starts on the same day of the week.
 - Splitting weeks, months, and years into even parts is easy.
@@ -87,9 +82,9 @@ I think this is a minor problem compared to the complexity of the current system
 - No Thursdays.
 - Special week to put all time changes and adjustments into such as leap seconds or leap days.
 
-## Extensions
+== Extensions
 
-### Removing the concept of months
+=== Removing the concept of months
 
 Months don't really add much to the system and could be removed entirely.
 Right now the are used for quarters and are associated with seasons but with a consistent week and year structure they aren't necessary.
@@ -97,7 +92,7 @@ It's often fun to associate certain months with events such as birthdays so I wo
 
 The notation would be YYYY-WW-DD where WW is the week number.
 
-### Switching to a base six number system
+=== Switching to a base six number system
 
 A base six number system would make the divisibility of the calendar system even more elegant.
 In my opinion base six is the most elegant number system.
@@ -105,7 +100,7 @@ Like mentioned before six has two unique prime factors (2 and 3) making it easy 
 This is in contrast to our current base ten system which only has two unique prime factors (2 and 5) while being a larger base.
 Of course the base ten system has the advantage of mapping to our ten fingers but who actually counts on their fingers anymore?
 
-### Switching to a base six time system
+=== Switching to a base six time system
 
 With a base six time system the day could be divided into 36 hours of 36 minutes of 36 seconds.
 In base six this would be 10 hours of 10 minutes of 10 seconds.
