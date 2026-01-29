@@ -4,49 +4,19 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-anyhow = "1.0"
 chrono = "0.4"
 dioxus = { version = "0.7", features = ["router"] }
 dioxus-sdk-storage = "0.7"
 dioxus-sdk-window = "0.7"
+dioxus-typst = { git = "https://github.com/RunnersNum40/dioxus-typst" }
 include_dir = { version = "0.7", features = ["glob"] }
 js-sys = "0.3"
-pulldown-cmark = "0.13"
 serde = { version = "1.0", features = ["derive"] }
-serde_yaml = "0.9"
-syntastica = { version = "0.6", default-features = false, features = [
-  "runtime-c2rust",
-] }
-syntastica-parsers-git = { version = "0.6", default-features = false, features = [
-  "haskell",
-  "runtime-c2rust",
-  "some",
-] }
-syntastica-themes = { version = "0.6", default-features = false, features = [
-  "runtime-c2rust",
-] }
-wasm-bindgen = "0.2"
-wasm-bindgen-futures = "0.4"
-web-sys = { version = "0.3", features = [
-  "Document",
-  "HtmlCanvasElement",
-  "Window",
-  "console",
-] }
-wgpu = { version = "28.0", features = ["webgl"] }
+toml = "0.9"
 
 [features]
 default = ["web"]
-desktop = ["dioxus/desktop"]
-mobile = ["dioxus/mobile"]
 web = ["dioxus/web"]
-
-[profile]
-[profile.android-dev]
-inherits = "dev"
-
-[profile.server-dev]
-inherits = "dev"
 
 [profile.wasm-dev]
 inherits = "dev"
