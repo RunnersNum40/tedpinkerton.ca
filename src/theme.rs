@@ -1,11 +1,10 @@
-use dioxus::prelude::*;
-use dioxus_sdk_storage::*;
-use dioxus_sdk_window::theme::{Theme as SystemTheme, use_system_theme};
-use serde::{Deserialize, Serialize, de::DeserializeOwned};
+use dioxus_sdk_window::theme::Theme as SystemTheme;
+use serde::{Deserialize, Serialize};
 use std::fmt;
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Theme {
+    #[default]
     Light,
     Dark,
 }
@@ -25,12 +24,6 @@ impl fmt::Display for Theme {
             Theme::Light => write!(f, "light"),
             Theme::Dark => write!(f, "dark"),
         }
-    }
-}
-
-impl Default for Theme {
-    fn default() -> Self {
-        Self::Light
     }
 }
 

@@ -1,5 +1,4 @@
 use crate::*;
-use dioxus::prelude::*;
 
 #[component]
 pub fn Projects() -> Element {

@@ -1,5 +1,4 @@
 use crate::*;
-use dioxus::prelude::*;
 
 const RESUME_PDF: Asset = asset!("/assets/Theodore_Pinkerton_CV.pdf");
 

@@ -1,5 +1,4 @@
 use crate::*;
-use dioxus::prelude::*;
 
 #[component]
 pub fn Page(id: String, name: Option<String>, body: Element) -> Element {
@@ -7,11 +6,7 @@ pub fn Page(id: String, name: Option<String>, body: Element) -> Element {
 
     let rendered_path = match path {
         Route::Home {} => "".to_string(),
-        _ => {
-            let trimmed = path.to_string().trim_end_matches('/').to_lowercase();
-
-            trimmed
-        }
+        _ => path.to_string().trim_end_matches('/').to_lowercase(),
     };
 
     rsx! {

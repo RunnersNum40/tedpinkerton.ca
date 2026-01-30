@@ -63,15 +63,11 @@ fn App() -> Element {
     let stored_theme = use_persistent("theme", StorageTheme::default);
 
     let theme = use_signal({
-        let system_theme = system_theme.clone();
-        let stored_theme = stored_theme.clone();
         move || resolve_theme(system_theme(), stored_theme())
     });
 
     {
-        let system_theme = system_theme.clone();
-        let stored_theme = stored_theme.clone();
-        let mut theme = theme.clone();
+        let mut theme = theme;
         use_effect(move || {
             theme.set(resolve_theme(system_theme(), stored_theme()));
         });
