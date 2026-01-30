@@ -15,9 +15,3 @@ pub use logo::Logo;
 
 mod blog_post;
 pub use blog_post::{BlogPost, BlogPostPreview, all_blog_previews};
-
-mod markdown;
-pub use markdown::Markdown;
-
-mod wgpu_canvas;
-pub use wgpu_canvas::WgpuCanvas;
