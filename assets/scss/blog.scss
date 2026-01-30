@@ -48,41 +48,61 @@
   }
 }
 
-.blog-post {
-  > p:first-child time {
-    color: var(--muted);
-    font-size: 0.875rem;
-    line-height: 1.2;
+.typst-content {
+  h1 {
+    font-size: clamp(1.5rem, 1.25rem + 1.5vw, 2rem);
+    margin: 1.5rem 0 0.75rem;
+    line-height: 1.3;
   }
 
   h2 {
-    margin: 1.25rem 0 0.6rem;
     font-size: clamp(1.25rem, 1rem + 1.1vw, 1.6rem);
+    margin: 1.25rem 0 0.6rem;
     line-height: 1.35;
   }
+
   h3 {
-    margin: 1rem 0 0.5rem;
     font-size: clamp(1.05rem, 1rem + 0.4vw, 1.25rem);
+    margin: 1rem 0 0.5rem;
     line-height: 1.35;
+  }
+
+  p {
+    margin: 0.75rem 0;
   }
 
   ul {
     @include mixins.prose-list(disc);
   }
+
   ol {
     @include mixins.prose-list(decimal);
   }
 
-  li > ul {
-    list-style: circle;
-  }
-  li > ol {
-    list-style: lower-alpha;
+  pre,
+  code {
+    font-family:
+      ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+    font-size: 0.9em;
   }
 
-  :is(p, li)
-    > :is(span, a, em, strong, code)
-    + :is(span, a, em, strong, code)::before {
-    content: " ";
+  pre {
+    padding: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0.75rem 0;
+  }
+
+  code {
+    background: var(--surface);
+    padding: 0.125rem 0.25rem;
+    border-radius: 3px;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
   }
 }
