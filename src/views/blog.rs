@@ -7,8 +7,9 @@ pub fn Blog() -> Element {
     rsx! {
         Page {
             id: "blog",
+            name: "Blog",
             body: rsx! {
-                h1 {
+                p {
                     "100% Human Generated Content"
                 }
                 br {}
