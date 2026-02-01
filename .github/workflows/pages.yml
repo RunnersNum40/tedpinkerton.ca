@@ -19,12 +19,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "npm"
-      - name: Install JS deps for npx
-        run: npm ci
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown

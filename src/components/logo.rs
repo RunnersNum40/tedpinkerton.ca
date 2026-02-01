@@ -14,7 +14,7 @@ pub fn Logo() -> Element {
 
     rsx! {
         img {
-            class: "logo relative top-[0.2rem]",
+            class: "logo relative top-02",
             src: "{src}",
             alt: "",
             aria_hidden: "true",

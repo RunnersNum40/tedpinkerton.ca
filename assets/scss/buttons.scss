@@ -1,0 +1,9 @@
+@use "./mixins";
+
+.btn {
+  @extend %btn-base;
+}
+
+.icon-btn {
+  line-height: 1;
+}

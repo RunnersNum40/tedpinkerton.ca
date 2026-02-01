@@ -37,7 +37,6 @@ enum Route {
 const FAVICON_LIGHT: Asset = asset!("/assets/icons/favicon_light.ico");
 const FAVICON_DARK: Asset = asset!("/assets/icons/favicon_dark.ico");
 
-const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
 const MAIN_CSS: Asset = asset!("/assets/scss/main.scss");
 
 fn main() {
@@ -91,7 +90,6 @@ fn App() -> Element {
             media: "(prefers-color-scheme: dark)",
         }
 
-        document::Link { rel: "stylesheet", href: TAILWIND_CSS }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
 
         div { id: "app", "data-theme": "{theme()}", Router::<Route> {} }

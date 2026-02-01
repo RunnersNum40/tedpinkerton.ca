@@ -1,0 +1,36 @@
+@use "./tokens" as t;
+@use "./mixins";
+@use "sass:map";
+
+#theme-toggle {
+  @include mixins.focus-ring;
+  border: 1px solid var(--border);
+  height: 2rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  text-align: center;
+  inline-size: calc(5ch + 1.25rem + 2px);
+  transition:
+    background-color 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+
+  > [aria-hidden="true"] {
+    display: inline-block;
+    width: 100%;
+  }
+
+  [data-theme="light"] & {
+    $dark: map.get(t.$themes, dark);
+    background: map.get($dark, surface);
+    color: map.get($dark, fg);
+    border-color: map.get($dark, border);
+  }
+
+  [data-theme="dark"] & {
+    $light: map.get(t.$themes, light);
+    background: map.get($light, surface);
+    color: map.get($light, fg);
+    border-color: map.get($light, border);
+  }
+}
