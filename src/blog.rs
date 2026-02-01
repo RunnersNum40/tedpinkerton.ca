@@ -1,28 +1,57 @@
-use crate::*;
 use chrono::NaiveDate;
-use dioxus::prelude::*;
-use dioxus_typst::Typst;
+use dioxus_typst::CompileOptions;
 use include_dir::{Dir, include_dir};
 
 static BLOG_DIR: Dir<'_> = include_dir!("$CARGO_MANIFEST_DIR/content/blog");
 
-fn all_slugs() -> Vec<String> {
+pub fn all_slugs() -> Vec<String> {
     BLOG_DIR
         .dirs()
         .filter_map(|dir| dir.path().file_name()?.to_str().map(String::from))
         .collect()
 }
 
-fn get_meta(slug: &str) -> Option<String> {
+pub fn get_meta(slug: &str) -> Option<String> {
     let file = BLOG_DIR.get_file(format!("{}/meta.toml", slug))?;
     Some(file.contents_utf8()?.to_string())
 }
 
-fn get_body(slug: &str) -> Option<String> {
+pub fn get_body(slug: &str) -> Option<String> {
     BLOG_DIR
         .get_file(format!("{}/body.typ", slug))
         .and_then(|f| f.contents_utf8())
         .map(String::from)
+}
+
+pub fn get_post_files(slug: &str) -> CompileOptions {
+    tracing::info!("Loading blog post files for slug {}", slug);
+    let mut options = CompileOptions::new();
+
+    if let Some(dir) = BLOG_DIR.get_dir(slug) {
+        tracing::debug!("Found blog post files dir {}", dir.path().display());
+        for file in dir.files() {
+            let filename = file
+                .path()
+                .file_name()
+                .and_then(|name| name.to_str())
+                .unwrap_or("");
+
+            tracing::debug!("Found blog post file: {}", filename);
+
+            if filename.ends_with("meta.toml") || filename.ends_with("body.typ") {
+                continue;
+            }
+
+            tracing::debug!("Adding blog post file to compile options: {}", filename);
+
+            let path = format!("{}/{}", slug, filename);
+            options = options.with_file(path, file.contents().to_vec());
+        }
+    }
+
+    tracing::info!("Loaded blog post files for slug {}", slug);
+    tracing::debug!("Compile options: {:?}", options);
+    options
 }
 
 #[derive(serde::Deserialize)]
@@ -35,14 +64,14 @@ struct RawMeta {
     draft: Option<bool>,
 }
 
-struct Meta {
-    title: String,
-    date: NaiveDate,
-    summary: Option<String>,
-    draft: bool,
+pub struct Meta {
+    pub title: String,
+    pub date: NaiveDate,
+    pub summary: Option<String>,
+    pub draft: bool,
 }
 
-fn parse_meta(content: &str) -> Option<Meta> {
+pub fn parse_meta(content: &str) -> Option<Meta> {
     let raw: RawMeta = toml::from_str(content).ok()?;
     let date = NaiveDate::parse_from_str(&raw.date, "%Y-%m-%d").ok()?;
     Some(Meta {
@@ -53,7 +82,7 @@ fn parse_meta(content: &str) -> Option<Meta> {
     })
 }
 
-fn first_paragraph_summary(body: &str) -> String {
+pub fn first_paragraph_summary(body: &str) -> String {
     let line = body
         .lines()
         .map(str::trim)
@@ -65,39 +94,6 @@ fn first_paragraph_summary(body: &str) -> String {
         out.push('…');
     }
     out
-}
-
-#[component]
-pub fn BlogPost(slug: String) -> Element {
-    if let (Some(meta_str), Some(body)) = (get_meta(&slug), get_body(&slug))
-        && let Some(meta) = parse_meta(&meta_str)
-    {
-        let iso = meta.date.to_string();
-        let human = meta.date.format("%B %d, %Y").to_string();
-        return rsx! {
-            Page {
-                id: "blog-post",
-                body: rsx! {
-                    article { class: "blog-post",
-                        p { class: "muted small",
-                            time { datetime: "{iso}", "on {human}" }
-                        }
-                        Typst { source: body, class: "typst-content".to_string() }
-                    }
-                },
-            }
-        };
-    }
-
-    rsx! {
-        Page {
-            id: "blog-post",
-            name: "Not found",
-            body: rsx! {
-                p { "Post not found." }
-            },
-        }
-    }
 }
 
 pub fn all_blog_previews() -> Vec<(String, NaiveDate, String, String)> {
@@ -122,24 +118,4 @@ pub fn all_blog_previews() -> Vec<(String, NaiveDate, String, String)> {
     items.sort_by(|a, b| b.1.cmp(&a.1));
 
     items
-}
-
-#[component]
-pub fn BlogPostPreview(title: String, date: NaiveDate, summary: String, link: String) -> Element {
-    let iso = date.to_string();
-    let human = date.format("%B %d, %Y").to_string();
-
-    rsx! {
-        Link { to: link.clone(),
-            article { class: "blog-card", key: "{link}",
-                header { class: "blog-card-head",
-                    p {
-                        time { datetime: "{iso}", "on {human}" }
-                    }
-                    h1 { "{title}" }
-                }
-                p { class: "blog-card-summary", "{summary}" }
-            }
-        }
-    }
 }

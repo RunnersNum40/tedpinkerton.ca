@@ -4,11 +4,14 @@ use dioxus_sdk_window::theme::{
     Theme as SystemTheme, ThemeError as SystemThemeError, use_system_theme,
 };
 
+mod blog;
 mod components;
+mod layouts;
 mod theme;
 mod views;
 
 use components::*;
+use layouts::*;
 use theme::*;
 use views::*;
 
