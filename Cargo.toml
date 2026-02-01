@@ -8,7 +8,7 @@ chrono = "0.4"
 dioxus = { version = "0.7", features = ["router"] }
 dioxus-sdk-storage = "0.7"
 dioxus-sdk-window = "0.7"
-dioxus-typst = { git = "https://github.com/RunnersNum40/dioxus-typst" }
+dioxus-typst = "0.2.0"
 include_dir = { version = "0.7", features = ["glob"] }
 js-sys = "0.3"
 serde = { version = "1.0", features = ["derive"] }
