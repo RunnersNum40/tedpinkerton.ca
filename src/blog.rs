@@ -24,11 +24,9 @@ pub fn get_body(slug: &str) -> Option<String> {
 }
 
 pub fn get_post_files(slug: &str) -> CompileOptions {
-    tracing::info!("Loading blog post files for slug {}", slug);
     let mut options = CompileOptions::new();
 
     if let Some(dir) = BLOG_DIR.get_dir(slug) {
-        tracing::debug!("Found blog post files dir {}", dir.path().display());
         for file in dir.files() {
             let filename = file
                 .path()
@@ -36,21 +34,15 @@ pub fn get_post_files(slug: &str) -> CompileOptions {
                 .and_then(|name| name.to_str())
                 .unwrap_or("");
 
-            tracing::debug!("Found blog post file: {}", filename);
-
             if filename.ends_with("meta.toml") || filename.ends_with("body.typ") {
                 continue;
             }
 
-            tracing::debug!("Adding blog post file to compile options: {}", filename);
-
             let path = format!("{}/{}", slug, filename);
-            options = options.with_file(path, file.contents().to_vec());
+            options = options.with_file(filename, file.contents().to_vec());
         }
     }
 
-    tracing::info!("Loaded blog post files for slug {}", slug);
-    tracing::debug!("Compile options: {:?}", options);
     options
 }
 
