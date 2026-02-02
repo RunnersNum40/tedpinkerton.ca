@@ -14,4 +14,4 @@ mod logo;
 pub use logo::Logo;
 
 mod blog_post_preview;
-pub use blog_post_preview::{BlogPostPreview, all_blog_previews};
+pub use blog_post_preview::BlogPostPreview;

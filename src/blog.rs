@@ -1,5 +1,5 @@
 use chrono::NaiveDate;
-use dioxus_typst::CompileOptions;
+use dioxus_typst::{CompileOptions, DocumentMetadata, extract_metadata};
 use include_dir::{Dir, include_dir};
 
 static BLOG_DIR: Dir<'_> = include_dir!("$CARGO_MANIFEST_DIR/content/blog");
@@ -9,11 +9,6 @@ pub fn all_slugs() -> Vec<String> {
         .dirs()
         .filter_map(|dir| dir.path().file_name()?.to_str().map(String::from))
         .collect()
-}
-
-pub fn get_meta(slug: &str) -> Option<String> {
-    let file = BLOG_DIR.get_file(format!("{}/meta.toml", slug))?;
-    Some(file.contents_utf8()?.to_string())
 }
 
 pub fn get_body(slug: &str) -> Option<String> {
@@ -34,7 +29,7 @@ pub fn get_post_files(slug: &str) -> CompileOptions {
                 .and_then(|name| name.to_str())
                 .unwrap_or("");
 
-            if filename.ends_with("meta.toml") || filename.ends_with("body.typ") {
+            if filename.ends_with("body.typ") {
                 continue;
             }
 
@@ -46,32 +41,28 @@ pub fn get_post_files(slug: &str) -> CompileOptions {
     options
 }
 
-#[derive(serde::Deserialize)]
-struct RawMeta {
-    title: String,
-    date: String,
-    #[serde(default)]
-    summary: Option<String>,
-    #[serde(default)]
-    draft: Option<bool>,
+pub fn get_post_meta(slug: &str) -> Option<DocumentMetadata> {
+    let source = get_body(slug)?;
+    let options = get_post_files(slug);
+    extract_metadata(&source, &options).ok()
 }
 
-pub struct Meta {
-    pub title: String,
-    pub date: NaiveDate,
-    pub summary: Option<String>,
-    pub draft: bool,
+pub fn is_draft(meta: &DocumentMetadata) -> bool {
+    meta.keywords
+        .iter()
+        .any(|k| k.eq_ignore_ascii_case("draft"))
 }
 
-pub fn parse_meta(content: &str) -> Option<Meta> {
-    let raw: RawMeta = toml::from_str(content).ok()?;
-    let date = NaiveDate::parse_from_str(&raw.date, "%Y-%m-%d").ok()?;
-    Some(Meta {
-        title: raw.title,
-        date,
-        summary: raw.summary,
-        draft: raw.draft.unwrap_or(false),
-    })
+pub fn first_header_title(body: &str) -> String {
+    let line = body
+        .lines()
+        .map(str::trim)
+        .find(|l| l.starts_with('=') || l.starts_with('#'))
+        .unwrap_or("");
+    line.trim_start_matches('=')
+        .trim_start_matches('#')
+        .trim()
+        .to_string()
 }
 
 pub fn first_paragraph_summary(body: &str) -> String {
@@ -88,22 +79,26 @@ pub fn first_paragraph_summary(body: &str) -> String {
     out
 }
 
-pub fn all_blog_previews() -> Vec<(String, NaiveDate, String, String)> {
+pub fn all_blog_previews() -> Vec<(String, Option<NaiveDate>, String, String)> {
     let mut items = vec![];
     let slugs = all_slugs();
 
     for slug in slugs {
-        if let Some(meta_str) = get_meta(&slug)
-            && let Some(meta) = parse_meta(&meta_str)
-            && (!meta.draft || cfg!(debug_assertions))
+        if let Some(meta) = get_post_meta(&slug)
+            && (!is_draft(&meta) || cfg!(debug_assertions))
         {
-            let summary = meta.summary.unwrap_or_else(|| {
+            let title = meta.title.clone().unwrap_or_else(|| {
+                get_body(&slug)
+                    .map(|b| first_header_title(&b))
+                    .unwrap_or_else(|| slug.clone())
+            });
+            let summary = meta.description.unwrap_or_else(|| {
                 get_body(&slug)
                     .map(|b| first_paragraph_summary(&b))
                     .unwrap_or_default()
             });
             let link = format!("/blog/{}", slug);
-            items.push((meta.title, meta.date, summary, link));
+            items.push((title, meta.date, summary, link));
         }
     }
 

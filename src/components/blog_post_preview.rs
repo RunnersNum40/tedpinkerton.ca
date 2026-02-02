@@ -2,12 +2,18 @@ use crate::*;
 use chrono::NaiveDate;
 use dioxus::prelude::*;
 
-pub use crate::blog::all_blog_previews;
-
 #[component]
-pub fn BlogPostPreview(title: String, date: NaiveDate, summary: String, link: String) -> Element {
-    let iso = date.to_string();
-    let human = date.format("%B %d, %Y").to_string();
+pub fn BlogPostPreview(
+    title: String,
+    date: Option<NaiveDate>,
+    summary: String,
+    link: String,
+) -> Element {
+    let (iso, human) = if let Some(date) = date {
+        (date.to_string(), date.format("%B %d, %Y").to_string())
+    } else {
+        ("".to_string(), "Unknown date".to_string())
+    };
 
     rsx! {
         Link { to: link.clone(),

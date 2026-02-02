@@ -8,11 +8,10 @@ chrono = "0.4"
 dioxus = { version = "0.7", features = ["router"] }
 dioxus-sdk-storage = "0.7"
 dioxus-sdk-window = "0.7"
-dioxus-typst = "0.3.0"
+dioxus-typst = "0.3.1"
 include_dir = { version = "0.7", features = ["glob"] }
 js-sys = "0.3"
 serde = { version = "1.0", features = ["derive"] }
-toml = "0.9"
 
 [features]
 default = ["web"]

@@ -1,3 +1,11 @@
+#set document(
+  title: "A Six Day Week Calendar System",
+  author: "Ted Pinkerton",
+  description: "A proposal for a six day week calendar system with cleaner divisibility and slightly more weekend",
+  keywords: "calendars",
+  date: datetime(year: 2025, month: 10, day: 6),
+)
+
 = A Six Day Week Calendar System
 
 The current Gregorian calendar has several limitations that I find very inelegant.

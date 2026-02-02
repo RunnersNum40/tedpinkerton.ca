@@ -453,6 +453,7 @@ dependencies = [
  "iana-time-zone",
  "js-sys",
  "num-traits",
+ "serde",
  "wasm-bindgen",
  "windows-link 0.2.1",
 ]
@@ -1523,9 +1524,9 @@ dependencies = [
 
 [[package]]
 name = "dioxus-typst"
-version = "0.3.0"
+version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f37cf39e0433e9934313998c53b8839594965431299abb9df4af7faaa83111bc"
+checksum = "516f55926504fd0c1999a9d91edc7f12de00172ecabf88a15c2f2853c0bb6d94"
 dependencies = [
  "chrono",
  "dioxus",
@@ -2669,14 +2670,13 @@ dependencies = [
 
 [[package]]
 name = "hyper-util"
-version = "0.1.19"
+version = "0.1.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "727805d60e7938b76b826a6ef209eb70eaa1812794f9424d4a4e2d740662df5f"
+checksum = "96547c2556ec9d12fb1578c4eaf448b04993e7fb79cbaad930a656880a6bdfa0"
 dependencies = [
  "base64",
  "bytes",
  "futures-channel",
- "futures-core",
  "futures-util",
  "http",
  "http-body",
@@ -5073,15 +5073,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "serde_spanned"
-version = "1.0.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f8bbf91e5a4d6315eee45e704372590b30e260ee83af6639d64557f51b067776"
-dependencies = [
- "serde_core",
-]
-
-[[package]]
 name = "serde_urlencoded"
 version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5493,7 +5484,7 @@ dependencies = [
  "cfg-expr",
  "heck 0.5.0",
  "pkg-config",
- "toml 0.8.2",
+ "toml",
  "version-compare",
 ]
 
@@ -5567,7 +5558,6 @@ dependencies = [
  "include_dir",
  "js-sys",
  "serde",
- "toml 0.9.11+spec-1.1.0",
 ]
 
 [[package]]
@@ -5785,24 +5775,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "185d8ab0dfbb35cf1399a6344d8484209c088f75f8f68230da55d48d95d43e3d"
 dependencies = [
  "serde",
- "serde_spanned 0.6.9",
+ "serde_spanned",
  "toml_datetime 0.6.3",
  "toml_edit 0.20.2",
-]
-
-[[package]]
-name = "toml"
-version = "0.9.11+spec-1.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f3afc9a848309fe1aaffaed6e1546a7a14de1f935dc9d89d32afd9a44bab7c46"
-dependencies = [
- "indexmap",
- "serde_core",
- "serde_spanned 1.0.4",
- "toml_datetime 0.7.5+spec-1.1.0",
- "toml_parser",
- "toml_writer",
- "winnow 0.7.14",
 ]
 
 [[package]]
@@ -5842,7 +5817,7 @@ checksum = "396e4d48bbb2b7554c944bde63101b5ae446cff6ec4a24227428f15eb72ef338"
 dependencies = [
  "indexmap",
  "serde",
- "serde_spanned 0.6.9",
+ "serde_spanned",
  "toml_datetime 0.6.3",
  "winnow 0.5.40",
 ]
@@ -5867,12 +5842,6 @@ checksum = "a3198b4b0a8e11f09dd03e133c0280504d0801269e9afa46362ffde1cbeebf44"
 dependencies = [
  "winnow 0.7.14",
 ]
-
-[[package]]
-name = "toml_writer"
-version = "1.0.6+spec-1.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ab16f14aed21ee8bfd8ec22513f7287cd4a91aa92e44edfe2c17ddd004e92607"
 
 [[package]]
 name = "tower"
@@ -6091,7 +6060,7 @@ dependencies = [
  "indexmap",
  "rustc-hash 2.1.1",
  "stacker",
- "toml 0.8.2",
+ "toml",
  "typst-library",
  "typst-macros",
  "typst-syntax",
@@ -6204,7 +6173,7 @@ dependencies = [
  "smallvec",
  "syntect",
  "time",
- "toml 0.8.2",
+ "toml",
  "ttf-parser",
  "two-face",
  "typed-arena",
@@ -6286,7 +6255,7 @@ dependencies = [
  "ecow",
  "rustc-hash 2.1.1",
  "serde",
- "toml 0.8.2",
+ "toml",
  "typst-timing",
  "typst-utils",
  "unicode-ident",

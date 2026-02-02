@@ -1,15 +1,16 @@
-use crate::blog::{get_body, get_meta, get_post_files, parse_meta};
+use crate::blog::{get_body, get_post_files, get_post_meta};
 use crate::*;
 use dioxus::prelude::*;
-use dioxus_typst::Typst;
+use dioxus_typst::{DocumentMetadata, Typst};
 
 #[component]
 pub fn BlogPost(slug: String) -> Element {
-    if let (Some(meta_str), Some(body)) = (get_meta(&slug), get_body(&slug))
-        && let Some(meta) = parse_meta(&meta_str)
-    {
-        let iso = meta.date.to_string();
-        let human = meta.date.format("%B %d, %Y").to_string();
+    if let (Some(meta), Some(body)) = (get_post_meta(&slug), get_body(&slug)) {
+        let (iso, human) = if let Some(date) = meta.date {
+            (date.to_string(), date.format("%B %d, %Y").to_string())
+        } else {
+            ("".to_string(), "Unknown date".to_string())
+        };
         let options = get_post_files(&slug);
         return rsx! {
             Page {
