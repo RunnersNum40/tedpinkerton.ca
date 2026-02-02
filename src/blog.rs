@@ -57,7 +57,7 @@ pub fn first_header_title(body: &str) -> String {
     let line = body
         .lines()
         .map(str::trim)
-        .find(|l| l.starts_with('=') || l.starts_with('#'))
+        .find(|l| l.starts_with('='))
         .unwrap_or("");
     line.trim_start_matches('=')
         .trim_start_matches('#')
