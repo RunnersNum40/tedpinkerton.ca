@@ -1523,9 +1523,9 @@ dependencies = [
 
 [[package]]
 name = "dioxus-typst"
-version = "0.2.0"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "49af51ea0ee8560b2f69db822e94398bebf8d05c07009b62e7c460df7050dc40"
+checksum = "f37cf39e0433e9934313998c53b8839594965431299abb9df4af7faaa83111bc"
 dependencies = [
  "chrono",
  "dioxus",
