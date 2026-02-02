@@ -1,6 +1,6 @@
 use crate::{
-    components::{Footer, Header},
     Route,
+    components::{Footer, Header},
 };
 use dioxus::prelude::*;
 
