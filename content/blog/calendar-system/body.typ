@@ -95,7 +95,7 @@ I think this is a minor problem compared to the complexity of the current system
 === Removing the concept of months
 
 Months don't really add much to the system and could be removed entirely.
-Right now the are used for quarters and are associated with seasons but with a consistent week and year structure they aren't necessary.
+Right now they are used for quarters and are associated with seasons but with a consistent week and year structure they aren't necessary.
 It's often fun to associate certain months with events such as birthdays so I would add unique names to every week of the year.
 
 The notation would be YYYY-WW-DD where WW is the week number.
