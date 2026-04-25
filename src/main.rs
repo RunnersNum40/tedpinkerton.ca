@@ -29,8 +29,8 @@ enum Route {
         BlogPost { slug: String },
         #[route("/projects/")]
         Projects {},
-        #[route("/art/")]
-        Art {},
+        #[route("/creative/")]
+        Creative {},
         #[route("/contact/")]
         Contact {},
         #[route("/resume/")]

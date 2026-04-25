@@ -1,8 +1,8 @@
 mod contact;
 pub use contact::Contact;
 
-mod art;
-pub use art::Art;
+mod creative;
+pub use creative::Creative;
 
 mod blog;
 pub use blog::Blog;

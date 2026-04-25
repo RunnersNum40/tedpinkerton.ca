@@ -39,7 +39,7 @@ fn NavBar() -> Element {
         ("Home", Route::Home {}, true),
         ("Blog", Route::Blog {}, true),
         ("Projects", Route::Projects {}, false),
-        ("Art", Route::Art {}, false),
+        ("Creative", Route::Creative {}, false),
         ("Contact", Route::Contact {}, true),
         ("Resume", Route::Resume {}, true),
     ];
