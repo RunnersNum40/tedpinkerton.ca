@@ -1,11 +1,11 @@
 use crate::*;
 
 #[component]
-pub fn Art() -> Element {
+pub fn Creative() -> Element {
     rsx! {
         Page {
-            id: "art",
-            name: "Art",
+            id: "creative",
+            name: "Creative",
             body: rsx! {
                 p { "Work in progress :)" }
                 p { "Imagine something cool." }
