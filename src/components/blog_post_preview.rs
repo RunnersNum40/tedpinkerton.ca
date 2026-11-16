@@ -1,6 +1,5 @@
 use crate::*;
 use chrono::NaiveDate;
-use dioxus::prelude::*;
 
 #[component]
 pub fn BlogPostPreview(

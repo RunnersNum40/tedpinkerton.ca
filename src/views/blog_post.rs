@@ -1,7 +1,6 @@
 use crate::blog::{get_body, get_post_files, get_post_meta};
 use crate::*;
-use dioxus::prelude::*;
-use dioxus_typst::{DocumentMetadata, Typst};
+use dioxus_typst::Typst;
 
 #[component]
 pub fn BlogPost(slug: String) -> Element {

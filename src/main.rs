@@ -7,35 +7,14 @@ use dioxus_sdk_window::theme::{
 mod blog;
 mod components;
 mod layouts;
+#[expect(unreachable_code)]
+mod route;
 mod theme;
 mod views;
 
 use components::*;
-use layouts::*;
+use route::Route;
 use theme::*;
-use views::*;
-
-#[derive(Debug, Clone, Routable, PartialEq)]
-#[rustfmt::skip]
-enum Route {
-    #[route("/badge/")]
-    Badge {},
-    #[layout(HeaderFooter)]
-        #[route("/")]
-        Home {},
-        #[route("/blog/")]
-        Blog {},
-        #[route("/blog/:slug")]
-        BlogPost { slug: String },
-        #[route("/projects/")]
-        Projects {},
-        #[route("/creative/")]
-        Creative {},
-        #[route("/contact/")]
-        Contact {},
-        #[route("/resume/")]
-        Resume {},
-}
 
 const FAVICON_LIGHT: Asset = asset!("/assets/icons/favicon_light.ico");
 const FAVICON_DARK: Asset = asset!("/assets/icons/favicon_dark.ico");
@@ -64,7 +43,7 @@ fn App() -> Element {
     let system_theme = use_system_theme();
     let stored_theme = use_persistent("theme", StorageTheme::default);
 
-    let theme = use_signal({ move || resolve_theme(system_theme(), stored_theme()) });
+    let theme = use_signal(move || resolve_theme(system_theme(), stored_theme()));
 
     {
         let mut theme = theme;

@@ -33,7 +33,6 @@ pub fn get_post_files(slug: &str) -> CompileOptions {
                 continue;
             }
 
-            let path = format!("{}/{}", slug, filename);
             options = options.with_file(filename, file.contents().to_vec());
         }
     }
@@ -102,7 +101,7 @@ pub fn all_blog_previews() -> Vec<(String, Option<NaiveDate>, String, String)> {
         }
     }
 
-    items.sort_by(|a, b| b.1.cmp(&a.1));
+    items.sort_by_key(|item| std::cmp::Reverse(item.1));
 
     items
 }
