@@ -19,8 +19,6 @@ pub(crate) enum Route {
         Creative {},
         #[route("/contact/")]
         Contact {},
-        #[route("/resume/")]
-        Resume {},
         #[route("/:..segments")]
         NotFound { segments: Vec<String> },
 }

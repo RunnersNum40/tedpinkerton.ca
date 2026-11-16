@@ -41,7 +41,6 @@ fn NavBar() -> Element {
         ("Projects", Route::Projects {}, false),
         ("Creative", Route::Creative {}, false),
         ("Contact", Route::Contact {}, true),
-        ("Resume", Route::Resume {}, true),
     ];
 
     rsx! {

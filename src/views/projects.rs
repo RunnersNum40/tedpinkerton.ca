@@ -8,11 +8,6 @@ pub fn Projects() -> Element {
             name: "Projects",
             body: rsx! {
                 p { "Work in progress :)" }
-                p {
-                    "Check "
-                    Link { to: Route::Resume {}, "resume" }
-                    " for more details."
-                }
             },
         }
     }

@@ -19,8 +19,5 @@ pub use not_found::NotFound;
 mod projects;
 pub use projects::Projects;
 
-mod resume;
-pub use resume::Resume;
-
 mod badge;
 pub use badge::Badge;
