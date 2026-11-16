@@ -1,4 +1,4 @@
-use crate::{Logo, Route, StorageTheme, Theme};
+use crate::{Logo, Route, Theme};
 use dioxus::prelude::*;
 
 #[component]
@@ -73,8 +73,7 @@ fn NavBar() -> Element {
 
 #[component]
 fn ThemeToggle() -> Element {
-    let theme = use_context::<Signal<Theme>>();
-    let mut stored_setting = use_context::<Signal<StorageTheme>>();
+    let mut theme = use_context::<Signal<Theme>>();
 
     let aria_label = match theme() {
         Theme::Light => "Switch to dark theme",
@@ -92,7 +91,7 @@ fn ThemeToggle() -> Element {
             "aria-label": aria_label,
             onclick: move |_| {
                 let next = theme().toggle();
-                stored_setting.set(Some(next));
+                theme.set(next);
             },
             span { class: "sr-only", "{aria_label}" }
             span { aria_hidden: "true", "{label}" }
