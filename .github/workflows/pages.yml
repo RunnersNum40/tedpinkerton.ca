@@ -14,6 +14,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      CARGO_TARGET_DIR: ${{ github.workspace }}/target
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -27,16 +29,14 @@ jobs:
           tool: cargo-binstall
       - name: Install dioxus-cli
         run: cargo binstall -y dioxus-cli --version 0.7.10 --locked
-      - name: Bundle site
-        run: dx bundle --platform web --release --locked --debug-symbols false --out-dir site
-      - name: Move from public dir
-        run: mv site/public/* site
-      - name: SPA fallback for GitHub Pages
-        run: cp site/index.html site/404.html
+      - name: Render static site
+        run: dx build --web --ssg --release --locked --force-sequential true --debug-symbols false
+      - name: Configure GitHub Pages error page
+        run: cp target/dx/tedpinkerton-ca/release/web/public/404/index.html target/dx/tedpinkerton-ca/release/web/public/404.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: target/dx/tedpinkerton-ca/release/web/public
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
