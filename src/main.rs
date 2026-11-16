@@ -1,5 +1,5 @@
 use dioxus::prelude::*;
-use dioxus_sdk_storage::*;
+use dioxus_sdk_storage::{LocalStorage, use_storage};
 use dioxus_sdk_window::theme::{
     Theme as SystemTheme, ThemeError as SystemThemeError, use_system_theme,
 };
@@ -41,7 +41,8 @@ fn resolve_theme(system: Result<SystemTheme, SystemThemeError>, setting: Storage
 #[component]
 fn App() -> Element {
     let system_theme = use_system_theme();
-    let stored_theme = use_persistent("theme", StorageTheme::default);
+    let stored_theme =
+        use_storage::<LocalStorage, StorageTheme>("theme".to_string(), StorageTheme::default);
 
     let theme = use_signal(move || resolve_theme(system_theme(), stored_theme()));
 
