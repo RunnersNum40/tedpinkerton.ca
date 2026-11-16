@@ -24,12 +24,45 @@ $themes: (
 );
 
 @mixin emit-theme($name) {
-  [data-theme="#{$name}"] {
-    @each $k, $v in map.get($themes, $name) {
-      --#{$k}: #{$v};
-    }
+  color-scheme: $name;
+  @each $k, $v in map.get($themes, $name) {
+    --#{$k}: #{$v};
   }
 }
 
-@include emit-theme(light);
-@include emit-theme(dark);
+:root {
+  @include emit-theme(light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include emit-theme(dark);
+  }
+}
+
+@each $name, $values in $themes {
+  :root[data-theme="#{$name}"] {
+    @include emit-theme($name);
+  }
+}
+
+:root[data-theme="light"] .theme-dark-only,
+:root[data-theme="dark"] .theme-light-only {
+  display: none !important;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .theme-dark-only {
+    display: none !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-light-only {
+    display: none !important;
+  }
+}
+
+:root:not([data-theme]) #theme-toggle {
+  display: none;
+}

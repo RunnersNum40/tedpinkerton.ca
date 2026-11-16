@@ -1,4 +1,4 @@
-use crate::{Logo, Route, Theme};
+use crate::{Logo, Route};
 use dioxus::prelude::*;
 
 #[component]
@@ -73,28 +73,15 @@ fn NavBar() -> Element {
 
 #[component]
 fn ThemeToggle() -> Element {
-    let mut theme = use_context::<Signal<Theme>>();
-
-    let aria_label = match theme() {
-        Theme::Light => "Switch to dark theme",
-        Theme::Dark => "Switch to light theme",
-    };
-    let label = match theme() {
-        Theme::Light => "Dark",
-        Theme::Dark => "Light",
-    };
-
     rsx! {
         button {
             id: "theme-toggle",
             class: "btn",
-            "aria-label": aria_label,
-            onclick: move |_| {
-                let next = theme().toggle();
-                theme.set(next);
-            },
-            span { class: "sr-only", "{aria_label}" }
-            span { aria_hidden: "true", "{label}" }
+            r#type: "button",
+            span { class: "sr-only theme-light-only", "Switch to dark theme" }
+            span { class: "sr-only theme-dark-only", "Switch to light theme" }
+            span { class: "theme-light-only", aria_hidden: "true", "Dark" }
+            span { class: "theme-dark-only", aria_hidden: "true", "Light" }
         }
     }
 }

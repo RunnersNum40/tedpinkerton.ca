@@ -1,15 +1,8 @@
-use crate::theme::Theme;
 use dioxus::prelude::*;
 
 #[component]
 pub fn SkuleWebring() -> Element {
     let SITE_URL = "https://tedpinkerton.ca";
-
-    let theme = use_context::<Signal<Theme>>();
-    let icon = match theme() {
-        Theme::Light => "https://webring.skule.ca/img/icon.svg",
-        Theme::Dark => "https://webring.skule.ca/img/icon-dark.svg",
-    };
 
     rsx! {
         nav { class: "webring", aria_label: "Skule WebRing",
@@ -23,7 +16,16 @@ pub fn SkuleWebring() -> Element {
                 class: "webring-center",
                 to: "https://webring.skule.ca/#{SITE_URL}",
                 rel: "noopener noreferrer",
-                img { src: "{icon}", alt: "Skule WebRing" }
+                img {
+                    class: "theme-light-only",
+                    src: "https://webring.skule.ca/img/icon.svg",
+                    alt: "Skule WebRing",
+                }
+                img {
+                    class: "theme-dark-only",
+                    src: "https://webring.skule.ca/img/icon-dark.svg",
+                    alt: "Skule WebRing",
+                }
             }
             Link {
                 class: "webring-arrow",

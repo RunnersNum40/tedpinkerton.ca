@@ -6,14 +6,8 @@ edition = "2024"
 [dependencies]
 chrono = "0.4"
 dioxus = { version = "0.7.10", features = ["router", "fullstack"] }
-dioxus-sdk-storage = "0.7"
 dioxus-typst = "0.3.1"
 include_dir = { version = "0.7", features = ["glob"] }
-js-sys = "0.3"
-serde = { version = "1.0", features = ["derive"] }
-
-[target.'cfg(target_arch = "wasm32")'.dependencies]
-dioxus-sdk-window = "0.7"
 
 [features]
 default = ["web"]

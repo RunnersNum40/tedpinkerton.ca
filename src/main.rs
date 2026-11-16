@@ -5,17 +5,16 @@ mod components;
 mod layouts;
 #[expect(unreachable_code)]
 mod route;
-mod theme;
 mod views;
 
 use components::*;
 use route::Route;
-use theme::*;
 
 const FAVICON_LIGHT: Asset = asset!("/assets/icons/favicon_light.ico");
 const FAVICON_DARK: Asset = asset!("/assets/icons/favicon_dark.ico");
 
 const MAIN_CSS: Asset = asset!("/assets/scss/main.scss");
+const THEME_SCRIPT: &str = include_str!("../assets/theme.js");
 
 fn main() {
     dioxus::LaunchBuilder::new()
@@ -55,9 +54,6 @@ async fn static_routes() -> Result<Vec<String>, ServerFnError> {
 
 #[component]
 fn App() -> Element {
-    let theme = use_theme();
-    use_context_provider(|| theme);
-
     rsx! {
         document::Meta { name: "viewport", content: "width=device-width, initial-scale=1" }
         document::Title { "Ted Pinkerton" }
@@ -74,7 +70,8 @@ fn App() -> Element {
         }
 
         document::Link { rel: "stylesheet", href: MAIN_CSS }
+        document::Script { "{THEME_SCRIPT}" }
 
-        div { id: "app", "data-theme": "{theme()}", Router::<Route> {} }
+        div { id: "app", Router::<Route> {} }
     }
 }
