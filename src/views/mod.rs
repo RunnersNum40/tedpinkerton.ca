@@ -13,6 +13,9 @@ pub use blog_post::BlogPost;
 mod home;
 pub use home::Home;
 
+mod not_found;
+pub use not_found::NotFound;
+
 mod projects;
 pub use projects::Projects;
 

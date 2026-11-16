@@ -21,4 +21,6 @@ pub(crate) enum Route {
         Contact {},
         #[route("/resume/")]
         Resume {},
+        #[route("/:..segments")]
+        NotFound { segments: Vec<String> },
 }
