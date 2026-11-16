@@ -26,9 +26,9 @@ jobs:
         with:
           tool: cargo-binstall
       - name: Install dioxus-cli
-        run: cargo binstall -y dioxus-cli
+        run: cargo binstall -y dioxus-cli --version 0.7.10 --locked
       - name: Bundle site
-        run: dx bundle --platform web --release --locked --out-dir site
+        run: dx bundle --platform web --release --locked --debug-symbols false --out-dir site
       - name: Move from public dir
         run: mv site/public/* site
       - name: SPA fallback for GitHub Pages
