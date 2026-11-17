@@ -13,7 +13,7 @@ pub fn all_slugs() -> Vec<String> {
 
 pub fn get_body(slug: &str) -> Option<String> {
     BLOG_DIR
-        .get_file(format!("{}/body.typ", slug))
+        .get_file(format!("{slug}/body.typ"))
         .and_then(|f| f.contents_utf8())
         .map(String::from)
 }
@@ -87,16 +87,12 @@ pub fn all_blog_previews() -> Vec<(String, Option<NaiveDate>, String, String)> {
             && (!is_draft(&meta) || cfg!(debug_assertions))
         {
             let title = meta.title.clone().unwrap_or_else(|| {
-                get_body(&slug)
-                    .map(|b| first_header_title(&b))
-                    .unwrap_or_else(|| slug.clone())
+                get_body(&slug).map_or(slug.clone(), |b| first_header_title(&b))
             });
-            let summary = meta.description.unwrap_or_else(|| {
-                get_body(&slug)
-                    .map(|b| first_paragraph_summary(&b))
-                    .unwrap_or_default()
-            });
-            let link = format!("/blog/{}", slug);
+            let summary = meta
+                .description
+                .unwrap_or_else(|| get_body(&slug).map_or_default(|b| first_paragraph_summary(&b)));
+            let link = format!("/blog/{slug}");
             items.push((title, meta.date, summary, link));
         }
     }
