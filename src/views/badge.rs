@@ -1,3 +1,4 @@
+use crate::components::PageMetadata;
 use dioxus::prelude::*;
 
 const BADGE_IMAGE: Asset = asset!("/assets/icons/badge.png");
@@ -5,6 +6,11 @@ const BADGE_IMAGE: Asset = asset!("/assets/icons/badge.png");
 #[component]
 pub fn Badge() -> Element {
     rsx! {
+        PageMetadata {
+            title: "Site badge",
+            description: "Ted Pinkerton's site badge.",
+            noindex: true,
+        }
         img {
             class: "h-6 w-6",
             src: "{BADGE_IMAGE}",

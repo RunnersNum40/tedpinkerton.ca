@@ -43,6 +43,11 @@ fn AboutContent() -> Element {
 #[component]
 pub fn Contact() -> Element {
     rsx! {
-        Page { id: "about", name: "Contact", body: AboutContent() }
+        Page {
+            id: "about",
+            name: "Contact",
+            description: "Get in touch with Ted Pinkerton by email, or find him on GitHub and LinkedIn.",
+            body: AboutContent(),
+        }
     }
 }

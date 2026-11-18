@@ -56,7 +56,6 @@ async fn static_routes() -> Result<Vec<String>, ServerFnError> {
 fn App() -> Element {
     rsx! {
         document::Meta { name: "viewport", content: "width=device-width, initial-scale=1" }
-        document::Title { "Ted Pinkerton" }
 
         document::Link {
             rel: "icon",

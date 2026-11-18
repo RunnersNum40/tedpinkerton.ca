@@ -1,4 +1,6 @@
-use crate::blog::{get_body, get_post_files, get_post_meta};
+use crate::blog::{
+    first_header_title, first_paragraph_summary, get_body, get_post_files, get_post_meta, is_draft,
+};
 use crate::*;
 use dioxus_typst::Typst;
 
@@ -11,9 +13,22 @@ pub fn BlogPost(slug: String) -> Element {
             ("".to_string(), "Unknown date".to_string())
         };
         let options = get_post_files(&slug);
+        let title = meta
+            .title
+            .clone()
+            .unwrap_or_else(|| first_header_title(&body));
+        let description = meta
+            .description
+            .clone()
+            .unwrap_or_else(|| first_paragraph_summary(&body));
+        let noindex = is_draft(&meta);
         return rsx! {
             Page {
                 id: "blog-post",
+                title,
+                description,
+                noindex,
+                article: ArticleMetadata { published: meta.date, authors: meta.authors },
                 body: rsx! {
                     article { class: "blog-post",
                         p { class: "muted small",
@@ -30,6 +45,8 @@ pub fn BlogPost(slug: String) -> Element {
         Page {
             id: "blog-post",
             name: "Not found",
+            description: "This blog post could not be found on Ted Pinkerton's website.",
+            noindex: true,
             body: rsx! {
                 p { "Post not found." }
             },

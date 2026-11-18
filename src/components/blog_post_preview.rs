@@ -11,7 +11,7 @@ pub fn BlogPostPreview(
     let (iso, human) = if let Some(date) = date {
         (date.to_string(), date.format("%B %d, %Y").to_string())
     } else {
-        ("".to_string(), "Unknown date".to_string())
+        (String::new(), "Unknown date".to_string())
     };
 
     rsx! {

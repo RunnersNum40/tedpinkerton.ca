@@ -1,16 +1,19 @@
 use crate::*;
 
 #[component]
-pub fn Page(id: String, name: Option<String>, body: Element) -> Element {
-    let path: Route = use_route();
-
-    let rendered_path = match path {
-        Route::Home {} => "".to_string(),
-        _ => path.to_string().trim_end_matches('/').to_lowercase(),
-    };
-
+pub fn Page(
+    id: String,
+    name: Option<String>,
+    description: String,
+    body: Element,
+    title: Option<String>,
+    image: Option<ShareImage>,
+    article: Option<ArticleMetadata>,
+    #[props(default)] noindex: bool,
+) -> Element {
+    let title = title.or_else(|| name.clone()).unwrap_or_default();
     rsx! {
-        document::Title { "tedpinkerton{rendered_path}" }
+        PageMetadata { title, description, image, article, noindex }
         section { id: "{id}",
             div { class: "site-container",
                 if let Some(name) = name {

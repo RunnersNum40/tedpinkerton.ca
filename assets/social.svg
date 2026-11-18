@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a0e14"/>
+  <image href="icons/icon_dark.png" x="650" y="00" width="540" height="540" opacity="0.75"/>
+  <text x="72" y="285" fill="#e6e1cf" font-family="DejaVu Sans, sans-serif" font-size="76" font-weight="700">Ted Pinkerton</text>
+  <text x="76" y="330" fill="#f29718" font-family="DejaVu Sans, sans-serif" font-size="24">tedpinkerton.ca</text>
+</svg>

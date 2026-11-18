@@ -8,6 +8,7 @@ pub fn Blog() -> Element {
         Page {
             id: "blog",
             name: "Blog",
+            description: "Ideas, observations, and proposals by Ted Pinkerton. 100% human-generated writing.",
             body: rsx! {
                 p {
                     "100% Human Generated Content"

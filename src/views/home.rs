@@ -20,6 +20,7 @@ pub fn Home() -> Element {
         Page {
             id: "home",
             name: "Ted Pinkerton",
+            description: "Ted Pinkerton's personal website: writing, projects, creative work, and ways to get in touch.",
             body: rsx! {
                 HomeContent {}
             },

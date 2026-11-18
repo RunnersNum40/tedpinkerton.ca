@@ -7,6 +7,9 @@ pub use header::Header;
 mod page;
 pub use page::Page;
 
+mod page_metadata;
+pub use page_metadata::{ArticleMetadata, PageMetadata, ShareImage};
+
 mod webring;
 pub use webring::SkuleWebring;
 

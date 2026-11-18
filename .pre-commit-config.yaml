@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: render-social-image
+        name: Render social sharing image
+        language: system
+        entry: rsvg-convert assets/social.svg --output assets/social.png
+        files: ^assets/(social\.(svg|png)|icons/icon_dark\.png)$
+        pass_filenames: false
